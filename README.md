@@ -45,7 +45,7 @@ cd client
 ### Install all packages in the package.json file
 
 ```Bash
-npm i
+npm install
 ```
 
 ### Run the app
