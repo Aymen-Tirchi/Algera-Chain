@@ -48,6 +48,15 @@ cd client
 npm install
 ```
 
+### Setup an .env file
+
+create .env file and enter the google maps api key and set the react rpc port to 8545 since the ganache-cli runs on the same port by default. The final .env file must look like this
+
+```bash
+REACT_APP_GOOGLE_MAP_API_KEY=*************************
+REACT_APP_RPC=http://127.0.0.1:8545/
+```
+
 ### Run the app
 
 ```Bash
