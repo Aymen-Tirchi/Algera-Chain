@@ -13,7 +13,7 @@ Product SupplyChain ETH is a decentralized supply chain management system built 
 ### Clone the repository
 
 ```Bash
-git clone https://github.com/MouradHIDOUSSI/PRODUCT-SUPPLYCHAIN-ETH.git && cd PRODUCT-SUPPLYCHAIN-ETH
+git clone https://github.com/Aymen-Tirchi/Algera-Chain.git && cd AlgeriaChain
 ```
 
 ### Install dependencies
@@ -30,13 +30,13 @@ Configure ganache-cli for 10 accounts and extend gasLimit to 6721975000 and beyo
 ganache-cli --accounts 10 --gasLimit 6721975000
 ```
 
-### Migrate the contracts
+### Open a second terminal and deploy the contracts
 
 ```Bash
 npx truffle migrate --network=develop --reset
 ```
 
-### Open a second terminal and enter the client folder
+### Enter the client folder
 
 ```Bash
 cd client
