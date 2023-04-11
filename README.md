@@ -13,7 +13,7 @@ Product SupplyChain ETH is a decentralized supply chain management system built 
 ### Clone the repository
 
 ```Bash
-git clone https://github.com/Aymen-Tirchi/Algera-Chain.git && cd AlgeriaChain
+git clone https://github.com/Aymen-Tirchi/AlgeriaChain.git && cd AlgeriaChain
 ```
 
 ### Install dependencies
