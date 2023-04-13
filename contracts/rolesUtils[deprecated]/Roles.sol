@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.21 <0.9.0;
+pragma solidity ^0.8.4;
 
 ///@title Library to add, remove and verify role.
-///@author Rishav Raj Kumar, Ramiz Mollah.
 ///@notice You can use this as helper functions for contracts making use of Roles.
 ///@notice The convenience function require can be used to check for conditions and throw an exception if the condition is not met.
 ///@dev All internal functions from use by contracts internally only.
