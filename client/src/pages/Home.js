@@ -84,7 +84,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link
-                  to="/ThirdParty/allProducts"
+                  to="/warehouse/allProducts"
                   style={{ textDecoration: "none", color: "#fff" }}
                 >
                   <Button
@@ -93,7 +93,7 @@ export default function Home() {
                     variant="outlined"
                     color="primary"
                   >
-                    Third party
+                    warehouse
                   </Button>
                 </Link>
                 <Link

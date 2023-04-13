@@ -95,7 +95,7 @@ export default function ShipManufacture(props) {
   const handleShipButton = async (id) => {
     try {
       await supplyChainContract.methods
-        .shipToThirdParty(id)
+        .shipTowarehouse(id)
         .send({ from: roles.manufacturer, gas: 1000000 })
         .on("transactionHash", function (hash) {
           handleSetTxhash(id, hash);

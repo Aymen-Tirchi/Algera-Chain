@@ -11,14 +11,14 @@ import AllManufacture from "./pages/Manufacturer/AllManufacture";
 import ShipManufacture from "./pages/Manufacturer/ShipManufacture";
 
 import "./App.css";
-import ReceiveThirdParty from "./pages/ThirdParty/ReceiveThirdParty";
+import Receivewarehouse from "./pages/warehouse/Receivewarehouse";
 import PurchaseCustomer from "./pages/Customer/PurchaseCustomer";
-import ShipThirdParty from "./pages/ThirdParty/ShipThirdParty";
+import Shipwarehouse from "./pages/warehouse/Shipwarehouse";
 import ReceiveDeliveryHub from "./pages/DeliveryHub/ReceiveDeliveryHub";
 import ShipDeliveryHub from "./pages/DeliveryHub/ShipDeliveryHub";
 import ReceiveCustomer from "./pages/Customer/ReceiveCustomer";
 import ReceivedByCustomer from "./pages/Customer/ReceivedByCustomer";
-import PurchaseThirdParty from "./pages/ThirdParty/PurshaseThirdParty";
+import Purchasewarehouse from "./pages/warehouse/Purshasewarehouse";
 import RoleAdmin from "./pages/RoleAdmin";
 
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -145,24 +145,24 @@ class App extends Component {
                     <h1>Assign Manufacturer Role at /RoleAdmin</h1>
                   )}
                 </Route>
-                <Route exact path="/ThirdParty/allProducts">
+                <Route exact path="/warehouse/allProducts">
                   {this.state.tpRole !== "" ? (
-                    <PurchaseThirdParty
+                    <Purchasewarehouse
                       accounts={this.state.accounts}
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Third Party Role at /RoleAdmin</h1>
+                    <h1>Assign warehouse Role at /RoleAdmin</h1>
                   )}
                 </Route>
-                <Route exact path="/ThirdParty/receive">
+                <Route exact path="/warehouse/receive">
                   {this.state.tpRole !== "" ? (
-                    <ReceiveThirdParty
+                    <Receivewarehouse
                       accounts={this.state.accounts}
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Third Party Role at /RoleAdmin</h1>
+                    <h1>Assign warehouse Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/Customer/buy">
@@ -175,14 +175,14 @@ class App extends Component {
                     <h1>Assign Customer Role at /RoleAdmin</h1>
                   )}
                 </Route>
-                <Route exact path="/ThirdParty/ship">
+                <Route exact path="/warehouse/ship">
                   {this.state.tpRole !== "" ? (
-                    <ShipThirdParty
+                    <Shipwarehouse
                       accounts={this.state.accounts}
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Third Party Role at /RoleAdmin</h1>
+                    <h1>Assign warehouse Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/DeliveryHub/receive">

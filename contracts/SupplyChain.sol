@@ -28,16 +28,16 @@ contract SupplyChain {
         roles[_account].Manufacturer = true;
     }
 
-    function hasThirdPartyRole(address _account) public view returns (bool) {
+    function haswarehouseRole(address _account) public view returns (bool) {
         require(_account != address(0));
-        return roles[_account].ThirdParty;
+        return roles[_account].warehouse;
     }
 
-    function addThirdPartyRole(address _account) public {
+    function addwarehouseRole(address _account) public {
         require(_account != address(0));
-        require(!hasThirdPartyRole(_account));
+        require(!haswarehouseRole(_account));
 
-        roles[_account].ThirdParty = true;
+        roles[_account].warehouse = true;
     }
 
     function hasDeliveryHubRole(address _account) public view returns (bool) {
@@ -71,11 +71,11 @@ contract SupplyChain {
     }
 
     event Manufactured(uint256 uid);
-    event PurchasedByThirdParty(uint256 uid);
+    event PurchasedBywarehouse(uint256 uid);
     event ShippedByManufacturer(uint256 uid);
-    event ReceivedByThirdParty(uint256 uid);
+    event ReceivedBywarehouse(uint256 uid);
     event PurchasedByCustomer(uint256 uid);
-    event ShippedByThirdParty(uint256 uid);
+    event ShippedBywarehouse(uint256 uid);
     event ReceivedByDeliveryHub(uint256 uid);
     event ShippedByDeliveryHub(uint256 uid);
     event ReceivedByCustomer(uint256 uid);
@@ -97,9 +97,9 @@ contract SupplyChain {
         _;
     }
 
-    modifier receivedByThirdParty(uint256 _uid) {
+    modifier receivedBywarehouse(uint256 _uid) {
         require(
-            products[_uid].productState == Structure.State.ReceivedByThirdParty
+            products[_uid].productState == Structure.State.ReceivedBywarehouse
         );
         _;
     }
@@ -111,9 +111,9 @@ contract SupplyChain {
         _;
     }
 
-    modifier shippedByThirdParty(uint256 _uid) {
+    modifier shippedBywarehouse(uint256 _uid) {
         require(
-            products[_uid].productState == Structure.State.ShippedByThirdParty
+            products[_uid].productState == Structure.State.ShippedBywarehouse
         );
         _;
     }
@@ -143,19 +143,19 @@ contract SupplyChain {
         internal
         pure
     {
-        address thirdParty;
+        address warehouse;
         string memory transaction;
-        string memory thirdPartyLongitude;
-        string memory thirdPartyLatitude;
+        string memory warehouseLongitude;
+        string memory warehouseLatitude;
 
         address deliveryHub;
         string memory deliveryHubLongitude;
         string memory deliveryHubLatitude;
         address customer;
 
-        product.thirdparty.thirdParty = thirdParty;
-        product.thirdparty.thirdPartyLongitude = thirdPartyLongitude;
-        product.thirdparty.thirdPartyLatitude = thirdPartyLatitude;
+        product.warehouse.warehouse = warehouse;
+        product.warehouse.warehouseLongitude = warehouseLongitude;
+        product.warehouse.warehouseLatitude = warehouseLatitude;
 
         product.deliveryhub.deliveryHub = deliveryHub;
         product.deliveryhub.deliveryHubLongitude = deliveryHubLongitude;
@@ -225,18 +225,18 @@ contract SupplyChain {
         emit Manufactured(_uid);
     }
 
-    ///@dev STEP 2 : Purchase of manufactured product by Third Party.
-    function purchaseByThirdParty(uint256 _uid) public manufactured(_uid) {
-        require(hasThirdPartyRole(msg.sender));
-        products[_uid].thirdparty.thirdParty = msg.sender;
-        products[_uid].productState = Structure.State.PurchasedByThirdParty;
+    ///@dev STEP 2 : Purchase of manufactured product by warehouse.
+    function purchaseBywarehouse(uint256 _uid) public manufactured(_uid) {
+        require(haswarehouseRole(msg.sender));
+        products[_uid].warehouse.warehouse = msg.sender;
+        products[_uid].productState = Structure.State.PurchasedBywarehouse;
         productHistory[_uid].history.push(products[_uid]);
 
-        emit PurchasedByThirdParty(_uid);
+        emit PurchasedBywarehouse(_uid);
     }
 
-    ///@dev STEP 3 : Shipping of purchased product to Third Party.
-    function shipToThirdParty(uint256 _uid)
+    ///@dev STEP 3 : Shipping of purchased product to warehouse.
+    function shipTowarehouse(uint256 _uid)
         public
         verifyAddress(products[_uid].manufacturer.manufacturer)
     {
@@ -248,29 +248,29 @@ contract SupplyChain {
     }
 
     ///@dev STEP 4 : Received the purchased product shipped by Manufacturer.
-    function receiveByThirdParty(
+    function receiveBywarehouse(
         uint256 _uid,
-        string memory thirdPartyLongitude,
-        string memory thirdPartyLatitude
+        string memory warehouseLongitude,
+        string memory warehouseLatitude
     )
         public
         shippedByManufacturer(_uid)
-        verifyAddress(products[_uid].thirdparty.thirdParty)
+        verifyAddress(products[_uid].warehouse.warehouse)
     {
-        require(hasThirdPartyRole(msg.sender));
+        require(haswarehouseRole(msg.sender));
         products[_uid].owner = msg.sender;
-        products[_uid].thirdparty.thirdPartyLongitude = thirdPartyLongitude;
-        products[_uid].thirdparty.thirdPartyLatitude = thirdPartyLatitude;
-        products[_uid].productState = Structure.State.ReceivedByThirdParty;
+        products[_uid].warehouse.warehouseLongitude = warehouseLongitude;
+        products[_uid].warehouse.warehouseLatitude = warehouseLatitude;
+        products[_uid].productState = Structure.State.ReceivedBywarehouse;
         productHistory[_uid].history.push(products[_uid]);
 
-        emit ReceivedByThirdParty(_uid);
+        emit ReceivedBywarehouse(_uid);
     }
 
-    ///@dev STEP 5 : Purchase of a product at third party by Customer.
+    ///@dev STEP 5 : Purchase of a product at warehouse by Customer.
     function purchaseByCustomer(uint256 _uid)
         public
-        receivedByThirdParty(_uid)
+        receivedBywarehouse(_uid)
     {
         require(hasCustomerRole(msg.sender));
         products[_uid].customer = msg.sender;
@@ -280,17 +280,17 @@ contract SupplyChain {
         emit PurchasedByCustomer(_uid);
     }
 
-    ///@dev STEP 7 : Shipping of product by third party purchased by customer.
-    function shipByThirdParty(uint256 _uid)
+    ///@dev STEP 7 : Shipping of product by warehouse purchased by customer.
+    function shipBywarehouse(uint256 _uid)
         public
         verifyAddress(products[_uid].owner)
-        verifyAddress(products[_uid].thirdparty.thirdParty)
+        verifyAddress(products[_uid].warehouse.warehouse)
     {
-        require(hasThirdPartyRole(msg.sender));
-        products[_uid].productState = Structure.State.ShippedByThirdParty;
+        require(haswarehouseRole(msg.sender));
+        products[_uid].productState = Structure.State.ShippedBywarehouse;
         productHistory[_uid].history.push(products[_uid]);
 
-        emit ShippedByThirdParty(_uid);
+        emit ShippedBywarehouse(_uid);
     }
 
     ///@dev STEP 8 : Receiveing of product by delivery hub purchased by customer.
@@ -298,7 +298,7 @@ contract SupplyChain {
         uint256 _uid,
         string memory deliveryHubLongitude,
         string memory deliveryHubLatitude
-    ) public shippedByThirdParty(_uid) {
+    ) public shippedBywarehouse(_uid) {
         require(hasDeliveryHubRole(msg.sender));
         products[_uid].owner = msg.sender;
         products[_uid].deliveryhub.deliveryHub = msg.sender;
@@ -411,8 +411,8 @@ contract SupplyChain {
             product.productdet.productPrice,
             product.productdet.productCategory,
             product.productState,
-            product.thirdparty.thirdParty,
-            product.thirdparty.thirdPartyLongitude
+            product.warehouse.warehouse,
+            product.warehouse.warehouseLongitude
         );
     }
 
@@ -442,7 +442,7 @@ contract SupplyChain {
             product = productHistory[_uid].history[i];
         }
         return (
-            product.thirdparty.thirdPartyLatitude,
+            product.warehouse.warehouseLatitude,
             product.deliveryhub.deliveryHub,
             product.deliveryhub.deliveryHubLongitude,
             product.deliveryhub.deliveryHubLatitude,

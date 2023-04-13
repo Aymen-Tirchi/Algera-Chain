@@ -11,7 +11,7 @@ export default function ProductModal({
   open,
   handleClose,
   handleReceiveButton,
-  aText
+  aText,
 }) {
   const [rdata, setRdata] = React.useState({
     long: "",
@@ -121,15 +121,15 @@ export default function ProductModal({
                     <div className={classes.dCol2}>{prod[1][5]}</div>
                   </div>
                   <div className={classes.dRow}>
-                    <div className={classes.dCol1}>Third Party Address: </div>{" "}
+                    <div className={classes.dCol1}>warehouse Address: </div>{" "}
                     <div className={classes.dCol2}>{prod[1][6]}</div>
                   </div>
                   <div className={classes.dRow}>
-                    <div className={classes.dCol1}>Third Party Longitude: </div>{" "}
+                    <div className={classes.dCol1}>warehouse Longitude: </div>{" "}
                     <div className={classes.dCol2}>{prod[1][7]}</div>
                   </div>
                   <div className={classes.dRow}>
-                    <div className={classes.dCol1}>Third Party Latitude: </div>{" "}
+                    <div className={classes.dCol1}>warehouse Latitude: </div>{" "}
                     <div className={classes.dCol2}>{prod[2][0]}</div>
                   </div>
 
@@ -207,7 +207,11 @@ export default function ProductModal({
                         >
                           Recieve
                         </Button>
-                        <p><b style={{ color: "red" }}>{aText.length !== 0 ? aText : ""}</b></p>
+                        <p>
+                          <b style={{ color: "red" }}>
+                            {aText.length !== 0 ? aText : ""}
+                          </b>
+                        </p>
                       </>
                     ) : (
                       <> </>

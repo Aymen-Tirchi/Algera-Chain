@@ -4,11 +4,11 @@ pragma solidity ^0.8.4;
 library Structure {
     enum State {
         Manufactured,
-        PurchasedByThirdParty,
+        PurchasedBywarehouse,
         ShippedByManufacturer,
-        ReceivedByThirdParty,
+        ReceivedBywarehouse,
         PurchasedByCustomer,
-        ShippedByThirdParty,
+        ShippedBywarehouse,
         ReceivedByDeliveryHub,
         ShippedByDeliveryHub,
         ReceivedByCustomer
@@ -27,10 +27,10 @@ library Structure {
         uint256 productPrice;
         string productCategory;
     }
-    struct ThirdPartyDetails {
-        address thirdParty;
-        string thirdPartyLongitude;
-        string thirdPartyLatitude;
+    struct warehouseDetails {
+        address warehouse;
+        string warehouseLongitude;
+        string warehouseLatitude;
     }
     struct DeliveryHubDetails {
         address deliveryHub;
@@ -43,7 +43,7 @@ library Structure {
         address owner;
         State productState;
         ManufactureDetails manufacturer;
-        ThirdPartyDetails thirdparty;
+        warehouseDetails warehouse;
         ProductDetails productdet;
         DeliveryHubDetails deliveryhub;
         address customer;
@@ -56,7 +56,7 @@ library Structure {
 
     struct Roles {
         bool Manufacturer;
-        bool ThirdParty;
+        bool warehouse;
         bool DeliveryHub;
         bool Customer;
     }

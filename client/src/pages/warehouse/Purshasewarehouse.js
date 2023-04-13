@@ -15,7 +15,7 @@ import ProductModal from "../../components/Modal";
 import clsx from "clsx";
 import Loader from "../../components/Loader";
 
-export default function PurchaseThirdParty(props) {
+export default function Purchasewarehouse(props) {
   const classes = useStyles();
   const supplyChainContract = props.supplyChainContract;
   const { roles } = useRole();
@@ -23,9 +23,9 @@ export default function PurchaseThirdParty(props) {
   const [allProducts, setAllProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const navItem = [
-    ["Buy Product", "/ThirdParty/allProducts"],
-    ["Receive Product", "/ThirdParty/receive"],
-    ["Ship Products", "/ThirdParty/ship"],
+    ["Buy Product", "/warehouse/allProducts"],
+    ["Receive Product", "/warehouse/receive"],
+    ["Ship Products", "/warehouse/ship"],
   ];
   React.useEffect(() => {
     (async () => {
@@ -93,8 +93,8 @@ export default function PurchaseThirdParty(props) {
 
   const handleBuyButton = async (id) => {
     await supplyChainContract.methods
-      .purchaseByThirdParty(id)
-      .send({ from: roles.thirdparty, gas: 1000000 })
+      .purchaseBywarehouse(id)
+      .send({ from: roles.warehouse, gas: 1000000 })
       .on("transactionHash", function (hash) {
         handleSetTxhash(id, hash);
       });
@@ -103,7 +103,7 @@ export default function PurchaseThirdParty(props) {
 
   return (
     <div classname={classes.pageWrap}>
-      <Navbar pageTitle={"Third Party"} navItems={navItem}>
+      <Navbar pageTitle={"warehouse"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (

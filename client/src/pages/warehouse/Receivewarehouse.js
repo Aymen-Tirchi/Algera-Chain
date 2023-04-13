@@ -15,7 +15,7 @@ import { useStyles } from "../../components/Styles";
 import clsx from "clsx";
 import Loader from "../../components/Loader";
 
-export default function ReceiveThirdParty(props) {
+export default function Receivewarehouse(props) {
   const supplyChainContract = props.supplyChainContract;
   const { roles } = useRole();
   const [count, setCount] = React.useState(0);
@@ -26,9 +26,9 @@ export default function ReceiveThirdParty(props) {
   const classes = useStyles();
   const [alertText, setalertText] = React.useState("");
   const navItem = [
-    ["Buy Product", "/ThirdParty/allProducts"],
-    ["Receive Product", "/ThirdParty/receive"],
-    ["Ship Products", "/ThirdParty/ship"],
+    ["Buy Product", "/warehouse/allProducts"],
+    ["Receive Product", "/warehouse/receive"],
+    ["Ship Products", "/warehouse/ship"],
   ];
   React.useEffect(() => {
     (async () => {
@@ -69,8 +69,8 @@ export default function ReceiveThirdParty(props) {
   const handleReceiveButton = async (id, long, lat) => {
     try {
       await supplyChainContract.methods
-        .receiveByThirdParty(parseInt(id), long, lat)
-        .send({ from: roles.thirdparty, gas: 1000000 })
+        .receiveBywarehouse(parseInt(id), long, lat)
+        .send({ from: roles.warehouse, gas: 1000000 })
         .on("transactionHash", function (hash) {
           handleSetTxhash(id, hash);
         });
@@ -110,7 +110,7 @@ export default function ReceiveThirdParty(props) {
 
   return (
     <div classname={classes.pageWrap}>
-      <Navbar pageTitle={"Third Party"} navItems={navItem}>
+      <Navbar pageTitle={"warehouse"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (

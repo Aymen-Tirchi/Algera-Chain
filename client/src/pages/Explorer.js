@@ -28,11 +28,11 @@ const columns = [
 
 const map = [
   "Manufactured",
-  "Bought By Third Party",
+  "Bought By warehouse",
   "Shipped From Manufacturer",
-  "Received By Third Party",
+  "Received By warehouse",
   "Bought By Customer",
-  "Shipped By Third Party",
+  "Shipped By warehouse",
   "Received at DeliveHub",
   "Shipped From DeliveryHub",
   "Received By Customer",
