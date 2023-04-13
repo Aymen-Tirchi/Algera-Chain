@@ -30,6 +30,15 @@ Configure ganache-cli for 10 accounts and extend gasLimit to 6721975000 and beyo
 ganache-cli --accounts 10 --gasLimit 6721975000
 ```
 
+### Run the local node in Docker (optional)
+
+if you want to run the ganache-cli on docker then use the following command
+
+docker run -d -p 8545:8545 ```Bash
+trufflesuite
+
+```/ganache-cli:latest -h 0.0.0.0 --accounts 10 --gasLimit 6721975000
+
 ### Open a second terminal and deploy the contracts
 
 ```Bash
