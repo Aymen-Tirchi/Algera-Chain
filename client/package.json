@@ -11,8 +11,11 @@
     "ganache-cli": "^6.12.2",
     "ganache-core": "^2.13.2",
     "google-maps-react": "^2.0.6",
+    "i18next": "^22.4.14",
+    "i18next-http-backend": "^2.2.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
+    "react-i18next": "^12.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.2.0",
     "web3": "1.2.2"
