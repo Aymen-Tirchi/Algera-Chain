@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: truffle-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: truffle-project
+  template:
+    metadata:
+      labels:
+        app: truffle-project
+    spec:
+      containers:
+      - name: ganache-cli
+        image: trufflesuite/ganache-cli:latest
+        command: ["ganache-cli", "-h", "0.0.0.0", "--accounts", "10", "--gasLimit", "6721975000"]
+        ports:
+        - containerPort: 8545
+      - name: truffle-project
+        image: trufflesuite/ganache-cli:latest
+        ports:
+        - containerPort: 8545
+        env:
+        - name: REACT_APP_GOOGLE_MAP_API_KEY
+          value: AIzaSyA6WqMeNU1cT5SdPi5MhmUrAqKTjUaZNGY
+        - name: REACT_APP_RPC
+          value: http://ganache-cli:8545

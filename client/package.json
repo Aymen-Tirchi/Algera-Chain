@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
+    "chargily-epay-react-js": "^1.0.0",
     "clsx": "^1.1.1",
     "express": "^4.17.1",
     "ganache-cli": "^6.12.2",
@@ -21,7 +22,7 @@
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-},
+  },
   "eslintConfig": {
     "extends": "react-app"
   },

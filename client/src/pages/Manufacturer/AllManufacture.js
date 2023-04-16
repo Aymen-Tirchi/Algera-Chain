@@ -113,7 +113,7 @@ export default function AllManufacture(props) {
                             className={classes.TableHead}
                             align="center"
                           >
-                            Product Code
+                            Product Price
                           </TableCell>
                           <TableCell
                             className={classes.TableHead}
@@ -173,7 +173,7 @@ export default function AllManufacture(props) {
                                     className={classes.TableCell}
                                     align="center"
                                   >
-                                    {prod[1][2]}
+                                    {prod[1][3]}
                                   </TableCell>
                                   <TableCell
                                     className={classes.TableCell}

@@ -136,7 +136,7 @@ export default function ReceiveCustomer(props) {
                           Universal ID
                         </TableCell>
                         <TableCell className={classes.TableHead} align="center">
-                          Product Code
+                        Product Price
                         </TableCell>
                         <TableCell className={classes.TableHead} align="center">
                           Manufacturer
@@ -195,7 +195,7 @@ export default function ReceiveCustomer(props) {
                                     align="center"
                                     onClick={() => handleClick(prod)}
                                   >
-                                    {prod[1][2]}
+                                    {prod[1][3]}
                                   </TableCell>
                                   <TableCell
                                     className={classes.TableCell}
