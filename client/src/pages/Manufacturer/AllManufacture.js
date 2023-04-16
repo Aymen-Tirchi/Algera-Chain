@@ -173,7 +173,7 @@ export default function AllManufacture(props) {
                                     className={classes.TableCell}
                                     align="center"
                                   >
-                                    {prod[1][3]}
+                                    {`${prod[1][3]}/DA`}
                                   </TableCell>
                                   <TableCell
                                     className={classes.TableCell}

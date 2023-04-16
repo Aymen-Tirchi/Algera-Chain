@@ -127,7 +127,7 @@ export default function Purchasewarehouse(props) {
                           Universal ID
                         </TableCell>
                         <TableCell className={classes.TableHead} align="center">
-                        Product Price
+                          Product Price
                         </TableCell>
                         <TableCell className={classes.TableHead} align="center">
                           Manufacturer
@@ -186,7 +186,7 @@ export default function Purchasewarehouse(props) {
                                     align="center"
                                     onClick={() => handleClick(prod)}
                                   >
-                                    {prod[1][3]}
+                                    {`${prod[1][3]}/DA`}
                                   </TableCell>
                                   <TableCell
                                     className={classes.TableCell}

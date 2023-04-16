@@ -109,7 +109,7 @@ export default function ProductModal({
 
                   <div className={classes.dRow}>
                     <div className={classes.dCol1}>Product Price: </div>{" "}
-                    <div className={classes.dCol2}>{prod[1][3]}</div>
+                    <div className={classes.dCol2}>{`${prod[1][3]}/DA`}</div>
                   </div>
 
                   <div className={classes.dRow}>
