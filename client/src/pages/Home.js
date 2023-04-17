@@ -33,7 +33,7 @@ export default function Home() {
             >
               <img
                 alt="."
-                src="/homeArt.png"
+                src="/track.png"
                 style={{ width: "90%", height: "auto" }}
               />
             </Grid>
@@ -53,7 +53,7 @@ export default function Home() {
               }}
             >
               <div className={classes.HomeCardWrap}>
-                <h1 className={classes.pageHeading}>Assign Roles</h1>
+                <h1 className={classes.pageHeading}>Set Roles</h1>
                 <Link
                   to="/roleAdmin"
                   style={{ textDecoration: "none", color: "#fff" }}

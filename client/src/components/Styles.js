@@ -14,7 +14,7 @@ export const useStyles = makeStyles({
 
   TableRoot: {
     width: "100%",
-    maxWidth: 1200,
+    maxWidth: 1500,
     margin: "5px auto",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
@@ -145,15 +145,15 @@ export const useStyles = makeStyles({
 
   //Home
   HomeBtn: {
-    margin: 10,
+    margin: 20,
   },
   HomeCardWrap: {
-    maxWidth: 500,
+    maxWidth: 530,
     width: "90%",
-    padding: 20,
-    borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    padding: 25,
+    borderRadius: 30,
+    boxShadow: "3px 3px 10px #E3DBDA",
     border: "2px solid #0a0a0a",
-    margin: "10px auto",
+    margin: "20px auto",
   },
 });
