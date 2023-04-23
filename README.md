@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Product SupplyChain ETH is a decentralized supply chain management system built on top of the Ethereum blockchain. It allows manufacturers, third-party logistics providers, delivery hubs, and customers to interact with each other in a secure and transparent manner. This system provides an immutable and transparent ledger to record all the transactions that take place in the supply chain, ensuring that all stakeholders have access to the same information.
+Product SupplyChain ETH is a decentralized supply chain management system built on top of the Ethereum blockchain. It allows manufacturers, warehouse logistics providers, delivery hubs, and customers to interact with each other in a secure and transparent manner. This system provides an immutable and transparent ledger to record all the transactions that take place in the supply chain, ensuring that all stakeholders have access to the same information.
 
 ## Installation and Setup
 
