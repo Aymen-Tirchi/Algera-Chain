@@ -18,11 +18,11 @@ export const useStyles = makeStyles({
     margin: "5px auto",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #91A1FB",
   },
   TableContainer: {
     maxHeight: 600,
-    borderRadius: 7,
+    borderRadius: 9,
   },
   AddressCell: {
     maxWidth: 150,
@@ -48,7 +48,7 @@ export const useStyles = makeStyles({
     margin: "30px auto",
     padding: 20,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #91A1FB",
   },
 
   RoleForm: {
@@ -66,7 +66,7 @@ export const useStyles = makeStyles({
   ProductPaper: {
     padding: 10,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #91A1FB",
     border: "2px solid #0a0a0a",
   },
   ExplorerdRow: {
@@ -86,7 +86,7 @@ export const useStyles = makeStyles({
     margin: "5px auto",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #91A1FB",
   },
 
   //Modal
@@ -103,7 +103,7 @@ export const useStyles = makeStyles({
     height: "80%",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #91A1FB",
     overflow: "scroll",
   },
   Reciptpaper: {
@@ -115,7 +115,7 @@ export const useStyles = makeStyles({
     height: "500px",
     //border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #91A1FB",
     overflow: "scroll",
   },
   dRow: {

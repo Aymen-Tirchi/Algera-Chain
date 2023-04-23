@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     width: '40%',
     border:"2px solid #0a0a0a",
     borderRadius:50,
-    boxShadow:"2px 2px 10px #9fa8da"
+    boxShadow:"2px 2px 10px #91A1FB "
 
   },
   input: {

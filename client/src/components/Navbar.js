@@ -154,7 +154,7 @@ export default function PersistentDrawerLeft({
             </ListItem>
           </Link>
           <Link
-            to="/explorer"
+            to="/Explorer"
             style={{ textDecoration: "none", color: "#fff" }}
           >
             <ListItem>

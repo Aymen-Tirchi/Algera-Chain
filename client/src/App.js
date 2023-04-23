@@ -101,7 +101,7 @@ class App extends Component {
                     supplyChainContract={this.state.contract}
                   />
                 </Route>
-                <Route exact path="/explorer">
+                <Route exact path="/Explorer">
                   <Explorer
                     accounts={this.state.accounts}
                     supplyChainContract={this.state.contract}
@@ -122,7 +122,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Manufacturer Role at /RoleAdmin</h1>
+                    <h1>Set Manufacturer Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/manufacturer/allManufacture">
@@ -132,7 +132,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Manufacturer Role at /RoleAdmin</h1>
+                    <h1>Set Manufacturer Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/manufacturer/ship">
@@ -142,7 +142,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Manufacturer Role at /RoleAdmin</h1>
+                    <h1>Set Manufacturer Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/warehouse/allProducts">
@@ -152,7 +152,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign warehouse Role at /RoleAdmin</h1>
+                    <h1>Set warehouse Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/warehouse/receive">
@@ -162,7 +162,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign warehouse Role at /RoleAdmin</h1>
+                    <h1>Set warehouse Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/Customer/buy">
@@ -172,7 +172,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Customer Role at /RoleAdmin</h1>
+                    <h1>Set Customer Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/warehouse/ship">
@@ -182,7 +182,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign warehouse Role at /RoleAdmin</h1>
+                    <h1>Set warehouse Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/DeliveryHub/receive">
@@ -192,7 +192,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Delivery Hub Role at /RoleAdmin</h1>
+                    <h1>Set Delivery Hub Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/DeliveryHub/ship">
@@ -202,7 +202,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Delivery Hub Role at /RoleAdmin</h1>
+                    <h1>Set Delivery Hub Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/Customer/receive">
@@ -212,7 +212,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Customer Role at /RoleAdmin</h1>
+                    <h1>Set Customer Role at /RoleAdmin</h1>
                   )}
                 </Route>
                 <Route exact path="/Customer/allReceived">
@@ -222,7 +222,7 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Customer Role at /RoleAdmin</h1>
+                    <h1>Set Customer Role at /RoleAdmin</h1>
                   )}
                 </Route>
               </Switch>

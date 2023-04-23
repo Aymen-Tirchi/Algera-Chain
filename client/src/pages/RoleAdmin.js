@@ -81,14 +81,14 @@ function RoleAdmin(props) {
     <div>
       <ResponsiveDrawer navItems={navItem}>
         <div className={classes.FormWrap}>
-          <h1 className={classes.pageHeading}>Add Roles</h1>
+          <h1 className={classes.pageHeading}>Add Roles </h1>
           {console.log(roles)}
 
           <form className={classes.root} noValidate autoComplete="off">
             <div className={classes.RoleForm}>
               <TextField
                 id="manufacturerRole"
-                label="Enter Manufacturer Address"
+                label="Enter Manufacturer Addres. Select a different address for each station"
                 variant="outlined"
                 value={manufacturerRole}
                 onChange={(e) => setManufacturerRole(e.target.value)}
@@ -98,7 +98,7 @@ function RoleAdmin(props) {
                 variant="contained"
                 color="primary"
                 onClick={handleAddManufacturerRole}
-                style={{ width: "30%", marginLeft: "10px" }}
+                style={{ width: "30%", marginLeft: "20px" }}
               >
                 Add Manufacturer
               </Button>
@@ -109,7 +109,7 @@ function RoleAdmin(props) {
             <div className={classes.RoleForm}>
               <TextField
                 id="warehouseRole"
-                label="Enter warehouse Address "
+                label="Enter warehouse Address. Select a different address for each station "
                 variant="outlined"
                 value={warehouseRole}
                 onChange={(e) => setwarehouseRole(e.target.value)}
@@ -119,7 +119,7 @@ function RoleAdmin(props) {
                 variant="contained"
                 color="primary"
                 onClick={handleAddwarehouseRole}
-                style={{ width: "30%", marginLeft: "10px" }}
+                style={{ width: "30%", marginLeft: "20px" }}
               >
                 Add warehouse
               </Button>
@@ -130,7 +130,7 @@ function RoleAdmin(props) {
             <div className={classes.RoleForm}>
               <TextField
                 id="deliveryHubRole"
-                label="Enter Delivery Hub Address"
+                label="Enter Delivery Hub Address. Select a different address for each station"
                 variant="outlined"
                 value={deliveryHubRole}
                 onChange={(e) => setDeliveryHubRole(e.target.value)}
@@ -140,7 +140,7 @@ function RoleAdmin(props) {
                 variant="contained"
                 color="primary"
                 onClick={handleAddDeliveryHubRole}
-                style={{ width: "30%", marginLeft: "10px" }}
+                style={{ width: "30%", marginLeft: "20px" }}
               >
                 add delivery hub
               </Button>
@@ -151,7 +151,7 @@ function RoleAdmin(props) {
             <div className={classes.RoleForm}>
               <TextField
                 id="customerRole"
-                label=" Enter Customer Address"
+                label=" Enter Customer Address. Select a different address for each station"
                 variant="outlined"
                 value={customerRole}
                 onChange={(e) => setCustomerRole(e.target.value)}
@@ -161,7 +161,7 @@ function RoleAdmin(props) {
                 variant="contained"
                 color="primary"
                 onClick={handleAddCustomerRole}
-                style={{ width: "30%", marginLeft: "10px" }}
+                style={{ width: "30%", marginLeft: "20px" }}
               >
                 add customer
               </Button>

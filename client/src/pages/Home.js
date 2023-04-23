@@ -31,10 +31,11 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
+              //ldn
               <img
                 alt="."
                 src="/track.png"
-                style={{ width: "90%", height: "auto" }}
+                style={{ width: "75%", height: "auto" }}
               />
             </Grid>
 
