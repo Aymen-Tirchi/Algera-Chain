@@ -55,7 +55,7 @@ export default function Manufacture(props) {
         .manufactureProduct(
           manuForm.manufacturerName,
           manuForm.manufacturerDetails,
-          manuForm.manufacturerLongitude,
+          manuForm.manufacturerLongitude.toString(),
           manuForm.manufacturerLatitude,
           manuForm.productName,
           parseInt(manuForm.productCode),
@@ -90,6 +90,21 @@ export default function Manufacture(props) {
       .send({ from: roles.manufacturer, gas: 900000 });
   };
 
+  const handleGeolocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setManuForm({
+          ...manuForm,
+          manufacturerLatitude: position.coords.latitude.toString(),
+          manufacturerLongitude: position.coords.longitude.toString(),
+        });
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  };
+  
   const createProduct = async () => {
     setLoading(true);
     for (var i = 0; i < 5; i++) {
@@ -109,6 +124,7 @@ export default function Manufacture(props) {
           handleSetTxhash(hash);
         });
     }
+    handleGeolocation();
     setLoading(false);
   };
 
@@ -143,6 +159,15 @@ export default function Manufacture(props) {
                     label="Manufacturer Details"
                     style={{ width: "100%" }}
                   />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleGeolocation}
+                  >
+                    Use Current Location
+                  </Button>
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
@@ -210,6 +235,7 @@ export default function Manufacture(props) {
                     style={{ width: "100%" }}
                   />
                 </Grid>
+                
               </Grid>
               <br />
               <p>
