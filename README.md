@@ -8,7 +8,7 @@ Product SupplyChain ETH is a decentralized supply chain management system built 
 
 ### Prerequisites
 
-`npm, git`
+`npm, git, docker(optional)`
 
 ### Clone the repository
 
