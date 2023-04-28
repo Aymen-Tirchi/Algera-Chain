@@ -24,6 +24,18 @@ export default function ProductModal({
       [e.target.name]: e.target.value,
     });
   };
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setRdata({
+          long: position.coords.longitude,
+          lat: position.coords.latitude,
+        });
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  };
 
   const classes = useStyles();
   return (
@@ -180,6 +192,13 @@ export default function ProductModal({
                           onChange={handleChangeForm}
                           label="Latitude"
                         />
+                        <Button
+                          variant="outlined"
+                          color="primary"
+                          onClick={getLocation}
+                        >
+                          Get Current Location
+                        </Button>
                       </>
                     ) : (
                       <> </>
