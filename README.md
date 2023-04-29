@@ -73,6 +73,6 @@ npm start
 
 The app gets hosted by default at port 3000.
 
-### Known Issues
+### License
 
-The app may produce warnings during development. These warnings can be resolved by following the instructions provided in the console.
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) License.
