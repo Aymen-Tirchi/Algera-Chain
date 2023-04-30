@@ -14,11 +14,6 @@ const mapStyles = {
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
-    // var point = [];
-    // prodData.map((data) =>{
-    //      point.push({latitude:data[0][7],longitude: data[0][7]});
-
-    // });
     var points =[];
     if(props.prodData[0][7].length !== 0) { points.push({latitude: props.prodData[0][7], longitude: props.prodData[0][6]})};
     if(props.prodData[2][0].length !== 0) {points.push( {latitude: props.prodData[2][0], longitude: props.prodData[1][7]})};
