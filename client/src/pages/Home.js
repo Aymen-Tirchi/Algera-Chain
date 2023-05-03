@@ -32,7 +32,7 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
-             
+            
               <img
                 alt="."
                 src="/track.png"
@@ -54,78 +54,8 @@ export default function Home() {
                 flexDirection: "column",
               }}
             >
-              <div className={classes.HomeCardWrap}>
-                <h1 className={classes.pageHeading}>Set Roles</h1>
-                <Link
-                  to="/roleAdmin"
-                  style={{ textDecoration: "none", color: "#fff" }}
-                >
-                  <Button
-                    className={classes.HomeBtn}
-                    size="large"
-                    variant="outlined"
-                    color="primary"
-                  >
-                    Assign
-                  </Button>
-                </Link>
-                <br />
-
-                <h1 className={classes.pageHeading}>Visit As</h1>
-                <Link
-                  to="/manufacturer/manufacture"
-                  style={{ textDecoration: "none", color: "#fff" }}
-                >
-                  <Button
-                    className={classes.HomeBtn}
-                    size="large"
-                    variant="outlined"
-                    color="primary"
-                  >
-                    Manufacturer
-                  </Button>
-                </Link>
-                <Link
-                  to="/warehouse/allProducts"
-                  style={{ textDecoration: "none", color: "#fff" }}
-                >
-                  <Button
-                    className={classes.HomeBtn}
-                    size="large"
-                    variant="outlined"
-                    color="primary"
-                  >
-                    warehouse
-                  </Button>
-                </Link>
-                <Link
-                  to="/DeliveryHub/receive"
-                  style={{ textDecoration: "none", color: "#fff" }}
-                >
-                  <Button
-                    className={classes.HomeBtn}
-                    size="large"
-                    variant="outlined"
-                    color="primary"
-                  >
-                    delivery hub
-                  </Button>
-                </Link>
-                <Link
-                  to="/Customer/buy"
-                  style={{ textDecoration: "none", color: "#fff" }}
-                >
-                  <Button
-                    className={classes.HomeBtn}
-                    size="large"
-                    variant="outlined"
-                    color="primary"
-                  >
-                    customer
-                  </Button>
-                </Link>
-                
-              </div>
+              <h1 className={classes.pageHeading}>Set Roles</h1>
+              
             </Grid>
           </Grid>
         </Navbar>

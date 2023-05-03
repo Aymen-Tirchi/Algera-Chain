@@ -13,7 +13,18 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { Avatar, ListItemIcon } from "@material-ui/core";
+import { Divider } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import WarehouseIcon from '@mui/icons-material/Warehouse';
+import AddIcon from '@mui/icons-material/Add';
+import PersonIcon from '@mui/icons-material/Person';
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 const drawerWidth = 240;
 
@@ -149,7 +160,10 @@ export default function PersistentDrawerLeft({
         </div>
         <List>
           <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-            <ListItem>
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
               <ListItemText>Home</ListItemText>
             </ListItem>
           </Link>
@@ -157,11 +171,72 @@ export default function PersistentDrawerLeft({
             to="/Explorer"
             style={{ textDecoration: "none", color: "#fff" }}
           >
-            <ListItem>
-              <ListItemText>Explorer</ListItemText>
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <ScreenSearchDesktopIcon />
+              </ListItemIcon>
+              <ListItemText>Search</ListItemText>
             </ListItem>
           </Link>
+          <Link
+            to="/roleAdmin"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText>Set Roles</ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/manufacturer/manufacture"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <MapsHomeWorkIcon />
+              </ListItemIcon>
+              <ListItemText>Manufacturer</ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/warehouse/allProducts"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <WarehouseIcon />
+              </ListItemIcon>
+              <ListItemText>Warehouse</ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/DeliveryHub/receive"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <LocalShippingIcon />
+              </ListItemIcon>
+              <ListItemText>Delivery Hub</ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/Customer/buy"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <PersonIcon />
+              </ListItemIcon>
+              <ListItemText>Customer</ListItemText>
+            </ListItem>
+          </Link>
+          
+          
         </List>
+
         <List>
           {navItems.length !== 0 ? (
             navItems.map((item) => (
