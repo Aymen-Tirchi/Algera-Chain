@@ -8,7 +8,7 @@ Product SupplyChain ETH is a decentralized supply chain management system built 
 
 ### Prerequisites
 
-`npm, git, docker(optional)`
+`yarn, git, docker(optional)`
 
 ### Clone the repository
 
@@ -19,7 +19,7 @@ git clone https://github.com/Aymen-Tirchi/AlgeriaChain.git && cd AlgeriaChain
 ### Install dependencies
 
 ```Bash
-npm install
+yarn install
 ```
 
 ### Configure ganache-cli
@@ -53,7 +53,7 @@ cd client
 ### Install all packages in the package.json file
 
 ```Bash
-npm install
+yarn install
 ```
 
 ### Setup an .env file
@@ -68,7 +68,7 @@ REACT_APP_RPC=http://127.0.0.1:8545/
 ### Run the app
 
 ```Bash
-npm start
+yarn start
 ```
 
 The app gets hosted by default at port 3000.
