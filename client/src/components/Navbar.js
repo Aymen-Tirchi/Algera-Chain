@@ -54,9 +54,10 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     flexShrink: 0,
   },
+  //change info of the withdrawer here
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#3e495c",
+    backgroundColor: "#AC6E6E",
     color: "#fff",
   },
   drawerHeader: {
@@ -254,25 +255,7 @@ export default function PersistentDrawerLeft({
         <div
           style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
         >
-          <div
-            style={{
-              width: "100%",
-              height: "80px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontWeight: 500,
-              fontSize: 17,
-              borderTop: "1px solid #fff",
-            }}
-          >
-            University of Batna <br /> M2 ISIDS <br />
-            2022-2023
-            <a
-              style={{ textDecoration: "none" }}
-              href="http://cs.univ-batna2.dz/"
-            ></a>
-          </div>
+          
         </div>
       </Drawer>
       <main

@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { useStyles } from "../components/Styles";
 import Grid from "@material-ui/core/Grid";
-import AboutUs from "../components/AboutUs";
+
 
 export default function Home() {
   const classes = useStyles();
@@ -30,12 +30,10 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
+           
             
-              <img
-                alt="."
-                src="/track.png"
-                style={{ width: "75%", height: "auto" }}
-              />
+             
+
             </Grid>
 
             <Grid
@@ -51,15 +49,17 @@ export default function Home() {
                 flexWrap: "wrap",
                 flexDirection: "column",
               }}
-            >
-              <h1 className={classes.pageHeading}>Set Roles</h1>
-              
+                // change and animation would be here
+              >
+               
+              <h1 className={classes.pageHeading}>  . </h1>
+                        
             </Grid>
           </Grid>
         </Navbar>
         <br />
 
-                <AboutUs />
+         
       </div>
     </>
   );
