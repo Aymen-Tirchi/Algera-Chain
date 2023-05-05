@@ -104,29 +104,6 @@ export default function Manufacture(props) {
       }
     );
   };
-  
-  const createProduct = async () => {
-    setLoading(true);
-    for (var i = 0; i < 5; i++) {
-      await supplyChainContract.methods
-        .manufactureProduct(
-          "product" + i,
-          "manufacturer" + 1,
-          "98",
-          "89",
-          "mi" + i,
-          99 + i,
-          12000,
-          "electronics"
-        )
-        .send({ from: roles.manufacturer, gas: 999999 })
-        .on("transactionHash", function (hash) {
-          handleSetTxhash(hash);
-        });
-    }
-    handleGeolocation();
-    setLoading(false);
-  };
 
   return (
     <>

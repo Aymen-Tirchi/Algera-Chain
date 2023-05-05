@@ -61,7 +61,7 @@ export default function Purchasewarehouse(props) {
       setAllProducts(arr);
       setLoading(false);
     })();
-  }, [count]);
+  }, [count, supplyChainContract.methods]);
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);

@@ -63,7 +63,7 @@ export default function ReceiveDeliveryHub(props) {
       setAllReceiveProducts(arr);
       setLoading(false);
     })();
-  }, [count]);
+  }, [count, supplyChainContract.methods]);
 
   const handleSetTxhash = async (id, hash) => {
     await supplyChainContract.methods

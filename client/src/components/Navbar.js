@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -13,13 +14,10 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { Avatar, ListItemIcon } from "@material-ui/core";
-import { Divider } from "@mui/material";
+import { ListItemIcon } from "@material-ui/core";
 import HomeIcon from "@mui/icons-material/Home";
 import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import WarehouseIcon from '@mui/icons-material/Warehouse';
 import AddIcon from '@mui/icons-material/Add';
 import PersonIcon from '@mui/icons-material/Person';

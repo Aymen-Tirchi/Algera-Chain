@@ -1,9 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Button from "@material-ui/core/Button";
 import { useStyles } from "../components/Styles";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
 import AboutUs from "../components/AboutUs";
 
 export default function Home() {

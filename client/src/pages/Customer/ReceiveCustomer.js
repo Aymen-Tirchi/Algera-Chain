@@ -64,7 +64,7 @@ export default function ReceiveCustomer(props) {
       setAllReceiveProducts(arr);
       setLoading(false);
     })();
-  }, [count]);
+  }, [count, supplyChainContract.methods]);
 
   const handleReceiveButton = async (id) => {
     try {
@@ -261,32 +261,6 @@ export default function ReceiveCustomer(props) {
                 />
               </Paper>
             </div>
-
-            {/* {allReceiveProducts.length !== 0 ? (allReceiveProducts.map((prod) => (
-                <>
-                    <div>
-                    <p>Universal ID : {prod[0][0]}</p>
-                    <p>SKU : {prod[0][1]}</p>
-                    <p>Owner : {prod[0][2]}</p>
-                    <p>Manufacturer : {prod[0][3]}</p>
-                    <p>Name of Manufacturer : {prod[0][4]}</p>
-                    <p>Details of Manufacturer : {prod[0][5]}</p>
-                    <p>Longitude of Manufature : {prod[0][6]}</p>
-                    <p>Latitude of Manufature : {prod[0][7]}</p>
-
-                    <p>Manufactured date : {prod[1][0]}</p>
-                    <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                onClick={() => handleClick(prod)}
-            >
-                Recieve
-            </Button>
-                    </div>
-                    
-                </>
-          ))) : <> </>} */}
           </>
         )}
       </Navbar>

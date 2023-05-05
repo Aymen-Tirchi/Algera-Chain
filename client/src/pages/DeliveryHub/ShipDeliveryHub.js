@@ -61,7 +61,7 @@ export default function ShipDeliveryHub(props) {
       setAllSoldProducts(arr);
       setLoading(false);
     })();
-  }, [count]);
+  }, [count, supplyChainContract.methods]);
 
   const handleSetTxhash = async (id, hash) => {
     await supplyChainContract.methods
