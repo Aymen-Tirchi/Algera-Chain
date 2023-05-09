@@ -2,7 +2,18 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { useStyles } from "../components/Styles";
 import Grid from "@material-ui/core/Grid";
-import { Card, CardContent, Typography, Button } from "@material-ui/core";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  Box,
+  Divider,
+  TextField,
+  TextareaAutosize,
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const cards = [
   {
@@ -15,34 +26,41 @@ const cards = [
   },
   {
     title: "Step 3",
-    content: "After the warehouse sellers purchase the product from the manufacturer, the manufacturer will ship the product to the warehouse",
+    content:
+      "After the warehouse sellers purchase the product from the manufacturer, the manufacturer will ship the product to the warehouse",
   },
   {
     title: "Step 4",
-    content: "The customer purchases a product from the list of available products",
+    content:
+      "The customer purchases a product from the list of available products",
   },
   {
     title: "Step 5",
-    content: "The warehouse  ships the bought product to delivery hub  and the delivery hub  verifies and receives it",
+    content:
+      "The warehouse  ships the bought product to delivery hub  and the delivery hub  verifies and receives it",
   },
   {
     title: "Step 6",
-    content: "the delivery hub  ships the bought product to the customer and the customer verifies and receives it",
+    content:
+      "the delivery hub  ships the bought product to the customer and the customer verifies and receives it",
   },
 ];
-
 
 export default function Home() {
   const classes = useStyles();
   const navItem = [1];
-  
-  
+  const [currentCard, setCurrentCard] = useState(0);
+
+  const handleNextCard = () => {
+    if (currentCard < cards.length - 1) {
+      setCurrentCard(currentCard + 1);
+    }
+  };
 
   return (
     <>
       <div className={classes.pageWrap}>
         <Navbar navItems={navItem}>
-        
           <Box className={classes.heroBox}>
             <Grid container spacing={6} className={classes.gridContainer}>
               <Grid item xs={12} md={7}>
@@ -86,8 +104,7 @@ export default function Home() {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-            >
-            </Grid>
+            ></Grid>
 
             <Grid
               item
@@ -102,8 +119,13 @@ export default function Home() {
                 flexDirection: "scroll",
               }}
             >
-              
-              <Card style={{border: '1px solid red', padding: '1rem', margin: '1rem'}}>
+              <Card
+                style={{
+                  border: "1px solid red",
+                  padding: "1rem",
+                  margin: "1rem",
+                }}
+              >
                 <CardContent>
                   <Typography variant="h5" component="h2">
                     {cards[currentCard].title}
@@ -114,11 +136,6 @@ export default function Home() {
                 </CardContent>
               </Card>
               <br />
-              <div>
-                <Button onClick={handlePrevCard}>Prev</Button>
-                <Button onClick={handleNextCard}>Next</Button>
-              </div>
-              
             </Grid>
           </Grid>
           <Divider dark />
@@ -209,8 +226,6 @@ export default function Home() {
         </Navbar>
 
         <br />
-
-                <AboutUs />
       </div>
     </>
   );
