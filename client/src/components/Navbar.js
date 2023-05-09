@@ -14,6 +14,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import { ListItemIcon } from "@material-ui/core";
 import HomeIcon from "@mui/icons-material/Home";
@@ -23,6 +24,20 @@ import AddIcon from '@mui/icons-material/Add';
 import PersonIcon from '@mui/icons-material/Person';
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+=======
+
+import { Link } from "react-router-dom";
+import { ListItemIcon } from "@material-ui/core";
+
+import HomeIcon from "@mui/icons-material/Home";
+import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
+
+import WarehouseIcon from "@mui/icons-material/Warehouse";
+import AddIcon from "@mui/icons-material/Add";
+import PersonIcon from "@mui/icons-material/Person";
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+>>>>>>> a2cb3ea (new home)
 
 const drawerWidth = 240;
 
@@ -232,8 +247,6 @@ export default function PersistentDrawerLeft({
               <ListItemText>Customer</ListItemText>
             </ListItem>
           </Link>
-          
-          
         </List>
 
         <List>
@@ -255,7 +268,25 @@ export default function PersistentDrawerLeft({
         <div
           style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
         >
+<<<<<<< HEAD
           
+=======
+          <div
+            style={{
+              width: "100%",
+              height: "80px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: 500,
+              fontSize: 17,
+              borderTop: "1px solid #fff",
+            }}
+          >
+            University of Batna <br /> M2 ISIDS <br />
+            2022-2023
+          </div>
+>>>>>>> a2cb3ea (new home)
         </div>
       </Drawer>
       <main

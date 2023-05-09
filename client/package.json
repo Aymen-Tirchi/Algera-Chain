@@ -10,6 +10,7 @@
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.3.1",
+    "@react-spring/web": "^9.7.2",
     "clsx": "^1.1.1",
     "express": "^4.17.1",
     "ganache-cli": "^6.12.2",
@@ -20,6 +21,7 @@
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
+    "react-transition-group": "^4.4.5",
     "web3": "1.2.2"
   },
   "scripts": {

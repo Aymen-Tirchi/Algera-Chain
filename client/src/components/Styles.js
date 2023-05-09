@@ -1,9 +1,10 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   pageWrap: {
     textAlign: "center",
     color: "#0a0a0a",
+    
   },
   pageHeading: {
     textAlign: "center",
@@ -156,4 +157,90 @@ export const useStyles = makeStyles({
     border: "2px solid #0a0a0a",
     margin: "20px auto",
   },
-});
+  
+    formContainer: {
+      maxWidth: '600px',
+      width: '80%',
+      margin: 'auto',
+      padding: theme.spacing(3),
+      backgroundColor: '#f7f7f7',
+      borderRadius: '20px',
+      boxShadow: "2px 2px 10px #002B5B",
+    },
+    form: {
+      
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    formHeading: {
+      marginBottom: theme.spacing(2),
+      textAlign: 'center',
+    },
+    inputField: {
+      marginBottom: theme.spacing(2),
+    },
+    textArea: {
+      marginBottom: theme.spacing(2),
+      width: '100%',
+      padding: theme.spacing(1),
+      fontSize: '16px',
+      border: '1px solid #ccc',
+      borderRadius: '5px',
+      color: '#fff',
+    },
+    footerContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      miHeight: '10vh',
+      padding: '10px',
+      justifyContent: 'center',
+      backgroundColor: '#1597BB',
+      flexDirection: 'column',
+      
+    },
+    footerText: {
+      paddingBottom: '3px',
+    },
+    footerDate: {
+      opacity: '0.4',
+    },
+    '.fade-enter': {
+      opacity: 0,
+      transform: 'translateY(-50%)'
+    },
+  
+    '.fade-enter-active': {
+      opacity: 1,
+      transform: 'translateY(0)',
+      transition: 'all 500ms'
+    },
+  
+    '.fade-exit': {
+      opacity: 1,
+      transform: 'translateY(0)'
+    },
+  
+    '.fade-exit-active': {
+      opacity: 0,
+      transform: 'translateY(50%)',
+      transition: 'all 500ms'
+    },
+    
+  
+    submitButton: {
+      width: '100%',
+      padding: theme.spacing(1.5),
+      fontSize: '16px',
+      fontWeight: 'bold',
+      backgroundColor: '#0077ff',
+      color: '#fff',
+      borderRadius: '5px',
+      boxShadow: 'none',
+      '&:hover': {
+        backgroundColor: '#0060cb',
+      },
+    },
+  }))
+  
+
