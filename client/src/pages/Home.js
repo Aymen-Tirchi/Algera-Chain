@@ -15,6 +15,11 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import emailjs from "emailjs-com";
+import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
+import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
+import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const cards = [
   {
