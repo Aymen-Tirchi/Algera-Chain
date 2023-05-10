@@ -187,7 +187,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: '16px',
       border: '1px solid #ccc',
       borderRadius: '5px',
-      color: '#fff',
+      color: 'black',
     },
     footerContainer: {
       display: 'flex',

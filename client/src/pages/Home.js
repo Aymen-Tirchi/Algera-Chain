@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const cards = [
   {
@@ -56,6 +57,28 @@ export default function Home() {
       setCurrentCard(currentCard + 1);
     }
   };
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_49bsonr",
+        "template_itbbmql",
+        event.target,
+        "7ObymWDiECp3Fahev",
+        { to_email: "algeriachain@gmail.com" }
+      )
+      .then((response) => {
+        console.log("Email sent successfully!", response.text);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+
+    // Clear the form fields after submission if needed
+    event.target.reset();
+  }
 
   return (
     <>
@@ -161,8 +184,10 @@ export default function Home() {
                   component="form"
                   noValidate
                   autoComplete="off"
+                  onSubmit={handleFormSubmit}
                 >
                   <TextField
+                    name="fullName"
                     label="Full Name"
                     variant="outlined"
                     fullWidth
@@ -170,6 +195,7 @@ export default function Home() {
                   />
 
                   <TextField
+                    name="email"
                     label="Email"
                     variant="outlined"
                     fullWidth
@@ -177,6 +203,7 @@ export default function Home() {
                   />
 
                   <TextField
+                    name="subject"
                     label="Subject"
                     variant="outlined"
                     fullWidth
@@ -184,6 +211,7 @@ export default function Home() {
                   />
 
                   <TextareaAutosize
+                    name="message"
                     aria-label="minimum height"
                     minRows={6}
                     placeholder="Enter a message"
