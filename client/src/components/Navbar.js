@@ -256,21 +256,7 @@ export default function PersistentDrawerLeft({
         <div
           style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
         >
-          <div
-            style={{
-              width: "100%",
-              height: "80px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontWeight: 500,
-              fontSize: 17,
-              borderTop: "1px solid #fff",
-            }}
-          >
-            University of Batna <br /> M2 ISIDS <br />
-            2022-2023
-          </div>
+          
         </div>
       </Drawer>
       <main
@@ -278,6 +264,7 @@ export default function PersistentDrawerLeft({
           [classes.contentShift]: open,
         })}
       >
+        
         <div className={classes.drawerHeader} />
         <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
       </main>

@@ -24,4 +24,9 @@ html, body {
 .App-link {
   color: #09d3ac;
 }
+.smallImage {
+  width: 50px; /* set the width to 100 pixels */
+  height: auto; /* let the height adjust automatically to maintain the aspect ratio */
+}
+
 
