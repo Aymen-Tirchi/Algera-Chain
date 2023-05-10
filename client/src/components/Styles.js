@@ -187,7 +187,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: '16px',
       border: '1px solid #ccc',
       borderRadius: '5px',
-      color: '#fff',
+      color: 'black',
     },
     footerContainer: {
       display: 'flex',
@@ -241,6 +241,79 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: '#0060cb',
       },
     },
+    subtitle: {
+      opacity: '0.4',
+      paddingBottom: '30px',
+    },
+    title: {
+      paddingBottom: '15px',
+      fontWeight: 'bold',
+    },
+    gridContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      maxWidth: '1300px',
+      padding: '50px',
+    },
+    heroBox: {
+      width: '100%',
+      display: 'flex',
+      minHeight: '600px',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    sectionGridContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      minHeight: '500px',
+    },
+    sectionGridItem: {
+      backgroundColor: '#f2f0f1',
+      textAlign: 'center',
+      padding: '30px',
+      width: '200px',
+      borderRadius: '10px',
+      margin: '10px !important',
+    },
+    testimonialCard: {
+      backgroundColor: '#fff',
+      padding: '10px',
+      minHeight: '200px',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    
+    testimonialStatement: {
+      paddingBottom: '25px',
+    },
+    avatar: {
+      marginRight: '10px',
+    },
+    testimonialPosition: {
+      fontSize: '14px',
+      opacity: '0.6',
+    },
+    aboutUsContainer: {
+      width: '100%',
+      display: 'flex',
+      minHeight: '400px',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '30px 0px 50px 0px',
+    },
+    
+    aboutUsSubtitle: {
+      opacity: '0.7',
+      paddingBottom: '30px',
+      fontSize: '18px',
+    },
+    largeImage: {
+      width: '100%',
+    },
+    
+    
   }))
   
 

@@ -11,9 +11,14 @@ import {
   Divider,
   TextField,
   TextareaAutosize,
+  Avatar,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
+import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
+import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const cards = [
   {
@@ -50,11 +55,83 @@ export default function Home() {
   const classes = useStyles();
   const navItem = [1];
   const [currentCard, setCurrentCard] = useState(0);
+  const reviews = [
+    {
+      id: 1,
+      name: "Karl Brighton",
+      statement:
+        "The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned.",
+      image_url:
+        "https://sweta-myteam-website-fm.netlify.app/static/media/avatar-kady.78fc482c.jpg",
+      position: "Software Engineer at Kadex",
+    },
+    {
+      id: 2,
+      name: "Krishna Bells",
+      statement:
+        "We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!",
+      image_url:
+        "https://sweta-myteam-website-fm.netlify.app/static/media/avatar-aiysha.e119a0c1.jpg",
+      position: "Product Manager at Google",
+    },
+    {
+      id: 3,
+      name: "Ben Spiff",
+      statement:
+        "Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month.",
+      image_url:
+        "https://sweta-myteam-website-fm.netlify.app/static/media/avatar-arthur.098c2e26.jpg",
+      position: "Founder of Crypto",
+    },
+  ];
 
-  const handleNextCard = () => {
-    if (currentCard < cards.length - 1) {
-      setCurrentCard(currentCard + 1);
-    }
+  const sectionItems = [
+    {
+      id: 1,
+      icon: <EngineeringOutlinedIcon sx={{ fontSize: 100 }} color="primary" />,
+      sentence:
+        "Solving world problems through various web applications using efficient programs and tools",
+    },
+    {
+      id: 2,
+      icon: <AllInclusiveIcon sx={{ fontSize: 100 }} color="primary" />,
+      sentence:
+        "Through team work, we collaborate and deliver quality projects of high standards",
+    },
+    {
+      id: 3,
+      icon: <PaidOutlinedIcon sx={{ fontSize: 100 }} color="primary" />,
+      sentence: "Flexible payment plan is applicable to all our services",
+    },
+  ];
+
+  const [currentPairIndex] = useState(0);
+  const renderCards = () => {
+    const pair1Index = currentPairIndex;
+    const pair2Index = currentPairIndex + 2;
+
+    return (
+      <TransitionGroup>
+        <CSSTransition key={pair1Index} classNames="card" timeout={500}>
+          <Card>
+            <CardContent>
+              <h2>{cards[pair1Index].title}</h2>
+              <p>{cards[pair1Index].content}</p>
+            </CardContent>
+          </Card>
+        </CSSTransition>
+        {pair2Index < cards.length && (
+          <CSSTransition key={pair2Index} classNames="card" timeout={500}>
+            <Card>
+              <CardContent>
+                <h2>{cards[pair2Index].title}</h2>
+                <p>{cards[pair2Index].content}</p>
+              </CardContent>
+            </Card>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+    );
   };
 
   return (
@@ -77,17 +154,105 @@ export default function Home() {
                   Business strategy, we are your best client.
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={5}>
+              <Grid item xs={12} md={1}>
                 <img
-                  src="reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG"
+                  src="https://as2.ftcdn.net/v2/jpg/02/91/22/93/1000_F_291229378_TfiyQrIPqpvmKvTREuWSZkxLGbb4eHEy.jpg"
                   alt="Img"
-                  className={classes.largeImage}
+                  style={{ width: "350px", height: "auto" }} // add inline styles for the smaller image size
                 />
               </Grid>
             </Grid>
           </Box>
 
           <Divider dark />
+          <Box sx={{ flexGrow: 1, minHeight: "400px" }}>
+            <Grid container className={classes.sectionGridContainer}>
+              {sectionItems.map((item) => (
+                <Grid
+                  item
+                  xs={12}
+                  md={3.5}
+                  minHeight={300}
+                  key={item.id}
+                  className={classes.sectionGridItem}
+                >
+                  {item.icon}
+                  <Typography>{item.sentence}</Typography>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              padding: "20px",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: "300px",
+            }}
+          >
+            <Grid container spacing={2}>
+              {reviews.map((review) => (
+                <Grid item sm={12} md={4} key={review.id}>
+                  <Card className={classes.testimonialCard}>
+                    <CardContent>
+                      <Typography className={classes.testimonialStatement}>
+                        "{review.statement}"
+                      </Typography>
+                      <Box sx={{ display: "flex" }}>
+                        <Avatar
+                          src={review.image_url}
+                          size="large"
+                          className={classes.avatar}
+                        />
+                        <Box>
+                          <Typography>{review.name}</Typography>
+                          <Typography className={classes.testimonialPosition}>
+                            {review.position}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+          <Box className={classes.aboutUsContainer}>
+            <Grid container spacing={6} className={classes.gridContainer}>
+              <Grid item xs={12} md={5}>
+                <img
+                  src="https://as2.ftcdn.net/v2/jpg/02/91/22/93/1000_F_291229378_TfiyQrIPqpvmKvTREuWSZkxLGbb4eHEy.jpg"
+                  alt="My Team"
+                  className={classes.largeImage}
+                />
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                <Typography
+                  variant="h3"
+                  fontWeight={700}
+                  className={classes.title}
+                >
+                  We build, We revive
+                </Typography>
+                <Typography className={classes.aboutUsSubtitle}>
+                  Your business needs to be in safe hands at all times. We
+                  ensure you never run out of customers and not run at loss. We
+                  are trusted by over 500+ companies to deliver quality
+                  marketing campaigns using Digital marketing & Offline
+                  marketing channels.
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{ width: "200px", fontSize: "16px" }}
+                >
+                  CONTACT US
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
           <Grid
             container
             spacing={3}
@@ -119,28 +284,12 @@ export default function Home() {
                 flexDirection: "scroll",
               }}
             >
-              <Card
-                style={{
-                  border: "1px solid red",
-                  padding: "1rem",
-                  margin: "1rem",
-                }}
-              >
-                <CardContent>
-                  <Typography variant="h5" component="h2">
-                    {cards[currentCard].title}
-                  </Typography>
-                  <Typography color="textSecondary">
-                    {cards[currentCard].content}
-                  </Typography>
-                </CardContent>
-              </Card>
               <br />
             </Grid>
           </Grid>
-          <Divider dark />
-          <h1>Team Section</h1>
-          <Divider dark />
+          <Divider />
+
+          <Divider />
           <div style={{ spacing: "20px" }}>
             <Divider dark />
 
@@ -224,8 +373,6 @@ export default function Home() {
             </Box>
           </div>
         </Navbar>
-
-        <br />
       </div>
     </>
   );
