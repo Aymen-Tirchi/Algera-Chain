@@ -191,19 +191,43 @@ export const useStyles = makeStyles((theme) => ({
     },
     footerContainer: {
       display: 'flex',
-      alignItems: 'center',
-      miHeight: '10vh',
-      padding: '10px',
-      justifyContent: 'center',
-      backgroundColor: '#1597BB',
       flexDirection: 'column',
-      
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '10vh',
+      padding: '10px',
+      backgroundColor: '#AC6E6E',
     },
     footerText: {
       paddingBottom: '3px',
+      color: 'black',
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
+      letterSpacing: '1px',
+      textAlign: 'center',
     },
     footerDate: {
-      opacity: '0.4',
+      opacity: '0.6',
+      color: 'black',
+      textAlign: 'center',
+      fontSize: '0.8rem',
+      marginTop: '20px',
+    },
+    socialIcons: {
+      display: 'flex',
+      justifyContent: 'center',
+      marginTop: '20px',
+      '& svg': {
+        color: 'black',
+        fontSize: '1.5rem',
+        marginLeft: '10px',
+        marginRight: '10px',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          transform: 'scale(1.2)',
+        },
+      },
     },
     '.fade-enter': {
       opacity: 0,
@@ -244,6 +268,7 @@ export const useStyles = makeStyles((theme) => ({
     subtitle: {
       opacity: '0.4',
       paddingBottom: '30px',
+      color: '#3C3A3A',
     },
     title: {
       paddingBottom: '15px',
@@ -294,6 +319,7 @@ export const useStyles = makeStyles((theme) => ({
     testimonialPosition: {
       fontSize: '14px',
       opacity: '0.6',
+      
     },
     aboutUsContainer: {
       width: '100%',
@@ -308,6 +334,7 @@ export const useStyles = makeStyles((theme) => ({
       opacity: '0.7',
       paddingBottom: '30px',
       fontSize: '18px',
+     
     },
     largeImage: {
       width: '100%',
@@ -316,4 +343,3 @@ export const useStyles = makeStyles((theme) => ({
     
   }))
   
-

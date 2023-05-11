@@ -20,7 +20,7 @@ import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 const cards = [
   {
     title: "Step 1",
@@ -169,12 +169,12 @@ export default function Home() {
                   fontWeight={700}
                   className={classes.title}
                 >
-                  What is Algeria Chain
+                  About Us
                 </Typography>
                 <Typography variant="h6" className={classes.subtitle}>
-                  Hire professionals who will help your business make 10X your
-                  previous income. With over 5years experience in Marketing &
-                  Business strategy, we are your best client.
+                Algeria Chain is a startup that uses blockchain technology to provide innovative solutions for real-world problems.
+                With Algeria Chain, You can trust that your tracking needs are in good hands. 
+
                 </Typography>
               </Grid>
               <Grid item xs={12} md={1}>
@@ -260,16 +260,16 @@ export default function Home() {
                   We build, We revive
                 </Typography>
                 <Typography className={classes.aboutUsSubtitle}>
-                  Your business needs to be in safe hands at all times. We
-                  ensure you never run out of customers and not run at loss. We
-                  are trusted by over 500+ companies to deliver quality
-                  marketing campaigns using Digital marketing & Offline
-                  marketing channels.
+                Our team is made up of experts in blockchain technology, logistics, and software development,
+                 who are passionate about creating a better future through technology. We are
+                 committed to delivering high-quality solutions that meet the needs of our clients. 
+                 
                 </Typography>
                 <Button
                   variant="contained"
                   color="primary"
                   sx={{ width: "200px", fontSize: "16px" }}
+                  href="#CONTACT US"
                 >
                   CONTACT US
                 </Button>
@@ -380,17 +380,12 @@ export default function Home() {
               </Box>
             </div>
             <Divider />
+            
 
-            <Box sx={{ flexGrow: 1 }} className={classes.footerContainer}>
+            <Box sx={{ flexGrow: 1 }} className={classes.footerContainer} id="CONTACT US">
               <Typography className={classes.footerText}>
-                Contact us by{" "}
-                <Link
-                  href="https://appseed.us"
-                  target="_blank"
-                  underline="none"
-                >
-                  Email
-                </Link>
+                Contact us by{" "} 
+              
               </Typography>
               <Typography className={classes.footerDate}>
                 Phone: 123-456-7890
@@ -398,6 +393,11 @@ export default function Home() {
               <Typography className={classes.footerDate}>
                 Location: Batna, Algeria
               </Typography>
+              <Box className={classes.socialIcons}>
+               <FaFacebook />
+               <FaTwitter />
+              <FaInstagram />
+              </Box>
             </Box>
           </div>
         </Navbar>
