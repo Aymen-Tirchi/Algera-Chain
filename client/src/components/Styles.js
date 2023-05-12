@@ -333,7 +333,8 @@ export const useStyles = makeStyles((theme) => ({
     aboutUsSubtitle: {
       opacity: '0.7',
       paddingBottom: '30px',
-      fontSize: '18px',
+      fontSize: '18px', 
+      color :"#242020"
      
     },
     largeImage: {

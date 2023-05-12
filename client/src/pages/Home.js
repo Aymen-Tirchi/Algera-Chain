@@ -179,9 +179,9 @@ export default function Home() {
               </Grid>
               <Grid item xs={12} md={1}>
                 <img
-                  src="https://as2.ftcdn.net/v2/jpg/02/91/22/93/1000_F_291229378_TfiyQrIPqpvmKvTREuWSZkxLGbb4eHEy.jpg"
+                  src="track.png"
                   alt="Img"
-                  style={{ width: "350px", height: "auto" }} // add inline styles for the smaller image size
+                  style={{ width: "580px", height: "auto" }} // add inline styles for the smaller image size
                 />
               </Grid>
             </Grid>

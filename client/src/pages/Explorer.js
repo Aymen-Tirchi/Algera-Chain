@@ -33,7 +33,7 @@ const map = [
   "Received By warehouse",
   "Bought By Customer",
   "Shipped By warehouse",
-  "Received at DeliveHub",
+  "Received at DeliveryHub",
   "Shipped From DeliveryHub",
   "Received By Customer",
 ];
@@ -134,7 +134,7 @@ export default function Explorer(props) {
               openRecipt={openRecipt}
               handleCloseRecipt={handleCloseRecipt}
             />
-            <h1 className={classes.pageHeading}>Search a product</h1>
+            <h1 className={classes.pageHeading}>Product Verification</h1>
             <CustomizedInputBase findProduct={findProduct} />
             {productData.length !== 0 ? (
               <>
@@ -177,7 +177,7 @@ export default function Explorer(props) {
                           onClick={() => handleClick(productData)}
                           style={{ margin: "10px auto" }}
                         >
-                          MORE DETAILS
+                          More Details
                         </Button>
                       </div>
                     </Paper>
@@ -294,7 +294,7 @@ export default function Explorer(props) {
                                     color="primary"
                                     onClick={() => handleClick(row)}
                                   >
-                                    DETAILS
+                                    Details
                                   </Button>
                                 </TableCell>
 
@@ -308,7 +308,7 @@ export default function Explorer(props) {
                                     color="primary"
                                     onClick={() => fetchTxRecipt(row[2][5])}
                                   >
-                                    RECIPT
+                                    Recipt
                                   </Button>
                                 </TableCell>
                               </TableRow>
