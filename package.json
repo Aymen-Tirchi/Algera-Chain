@@ -2,11 +2,17 @@
     "name": "eth-supplychain-dapp",
     "version": "0.1.0",
     "dependencies": {
-        "@babel/runtime": "^7.21.5",
-        "@material-ui/core": "^4.12.4",
-        "emailjs-com": "^3.2.0",
-        "react-spring": "^9.7.1",
-        "solc": "^0.8.4",
-        "truffle": "^5.3.7"
+      "@babel/runtime": "^7.21.5",
+      "@material-ui/core": "^4.12.4",
+      "emailjs-com": "^3.2.0",
+      "react-spring": "^9.7.1",
+      "solc": "^0.8.4",
+      "truffle": "^5.3.7"
+    },
+    "scripts": {
+      "deploy": "npx truffle migrate --network=develop --reset",
+      "ganache": "ganache-cli --accounts 10 --gasLimit 6721975000",
+      "docker": "docker run -d -p 8545:8545 trufflesuite/ganache-cli:latest -h 0.0.0.0 --accounts 10 --gasLimit 6721975000"
     }
-}
+  }
+  

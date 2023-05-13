@@ -27,7 +27,7 @@ yarn install
 Configure ganache-cli for 10 accounts and extend gasLimit to 6721975000 and beyond, so as to have enough gas for migrating the smart contracts and a data flow for the prototype.
 
 ```Bash
-ganache-cli --accounts 10 --gasLimit 6721975000
+yarn ganache
 ```
 
 ### Run the local node in Docker (optional)
@@ -35,13 +35,13 @@ ganache-cli --accounts 10 --gasLimit 6721975000
 if you want to run the ganache-cli on docker then use the following command
 
 ```Bash
-docker run -d -p 8545:8545 trufflesuite/ganache-cli:latest -h 0.0.0.0 --accounts 10 --gasLimit 6721975000
+yarn docker
 ```
 
 ### Open a second terminal and deploy the contracts
 
 ```Bash
-npx truffle migrate --network=develop --reset
+yarn deploy
 ```
 
 ### Enter the client folder
