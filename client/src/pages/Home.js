@@ -169,19 +169,20 @@ export default function Home() {
                   fontWeight={700}
                   className={classes.title}
                 >
-                  About Us
+                  Blockchain in Supply Chain
                 </Typography>
                 <Typography variant="h6" className={classes.subtitle}>
-                Algeria Chain is a startup that uses blockchain technology to provide innovative solutions for real-world problems.
-                With Algeria Chain, You can trust that your tracking needs are in good hands. 
+                We use blockchain technology to provide innovative solutions for real-world problems.
+                With Algeria Chain, you can trust that your tracking needs are being handled with care.
+                Now, Tracking your product is just a click away.
 
                 </Typography>
               </Grid>
               <Grid item xs={12} md={1}>
                 <img
-                  src="track.png"
+                  src="trackingsys.png"
                   alt="Img"
-                  style={{ width: "580px", height: "auto" }} // add inline styles for the smaller image size
+                  style={{ width: "510px", height: "auto" }} // add inline styles for the smaller image size
                 />
               </Grid>
             </Grid>

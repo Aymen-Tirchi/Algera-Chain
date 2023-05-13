@@ -266,9 +266,9 @@ export const useStyles = makeStyles((theme) => ({
       },
     },
     subtitle: {
-      opacity: '0.4',
+      //opacity: '0.4',
       paddingBottom: '30px',
-      color: '#3C3A3A',
+      color: '#4E4D4D',
     },
     title: {
       paddingBottom: '15px',
