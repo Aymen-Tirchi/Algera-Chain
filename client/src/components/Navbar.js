@@ -181,17 +181,6 @@ export default function PersistentDrawerLeft({
             </ListItem>
           </Link>
           <Link
-            to="/roleAdmin"
-            style={{ textDecoration: "none", color: "#fff" }}
-          >
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <AddIcon />
-              </ListItemIcon>
-              <ListItemText>Set Roles</ListItemText>
-            </ListItem>
-          </Link>
-          <Link
             to="/manufacturer/manufacture"
             style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
