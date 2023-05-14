@@ -26,6 +26,7 @@ import AddIcon from "@mui/icons-material/Add";
 import PersonIcon from "@mui/icons-material/Person";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const drawerWidth = 240;
 
@@ -182,6 +183,17 @@ export default function PersistentDrawerLeft({
             </ListItem>
           </Link>
           <Link
+            to="/roleAdmin"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <AddCircleIcon sx={{ fontSize: 35, color: '#DDE4DD' }} />
+              </ListItemIcon>
+              <ListItemText>Roles Addresses</ListItemText>
+            </ListItem>
+          </Link>
+          <Link
             to="/manufacturer/manufacture"
             style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
@@ -225,17 +237,7 @@ export default function PersistentDrawerLeft({
               <ListItemText>Customer</ListItemText>
             </ListItem>
           </Link>
-          <Link
-            to="/roleAdmin"
-            style={{ textDecoration: "none", color: "#fff" }}
-          >
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <AddIcon />
-              </ListItemIcon>
-              <ListItemText>Roles Addresses</ListItemText>
-            </ListItem>
-          </Link>
+          
         </List>
         <List>
           {navItems.length !== 0 ? (

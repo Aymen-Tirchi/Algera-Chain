@@ -21,6 +21,9 @@ import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+
+
+
 const cards = [
   {
     title: "Step 1",
