@@ -181,17 +181,6 @@ export default function PersistentDrawerLeft({
             </ListItem>
           </Link>
           <Link
-            to="/roleAdmin"
-            style={{ textDecoration: "none", color: "#fff" }}
-          >
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <AddIcon />
-              </ListItemIcon>
-              <ListItemText>Set Roles</ListItemText>
-            </ListItem>
-          </Link>
-          <Link
             to="/manufacturer/manufacture"
             style={{ textDecoration: "none", color: "#fff" }}
           >
@@ -235,8 +224,18 @@ export default function PersistentDrawerLeft({
               <ListItemText>Customer</ListItemText>
             </ListItem>
           </Link>
+          <Link
+            to="/roleAdmin"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText>Roles Addresses</ListItemText>
+            </ListItem>
+          </Link>
         </List>
-
         <List>
           {navItems.length !== 0 ? (
             navItems.map((item) => (
@@ -253,18 +252,12 @@ export default function PersistentDrawerLeft({
             <> </>
           )}
         </List>
-        <div
-          style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
-        >
-          
-        </div>
       </Drawer>
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
-        
         <div className={classes.drawerHeader} />
         <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
       </main>

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ResponsiveDrawer from "../components/Navbar";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { useRole } from "../context/RoleDataContext";
 import { useStyles } from "../components/Styles";
 
@@ -9,99 +8,80 @@ function RoleAdmin(props) {
   const accounts = props.accounts;
   const supplyChainContract = props.supplyChainContract;
   const { roles, setRoles } = useRole();
-
-  const classes = useStyles();
-  const [manufacturerRole, setManufacturerRole] = React.useState("");
-  const [warehouseRole, setwarehouseRole] = React.useState("");
-  const [deliveryHubRole, setDeliveryHubRole] = React.useState("");
-  const [customerRole, setCustomerRole] = React.useState("");
   const navItem = [];
 
-  const handleAddManufacturerRole = async () => {
-    await setRoles({
-      ...roles,
-      manufacturer: manufacturerRole,
-    });
+  const classes = useStyles();
+  const [loading, setLoading] = useState(true);
 
-    localStorage.setItem("mRole", manufacturerRole);
-    await supplyChainContract.methods
-      .addManufacturerRole(manufacturerRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+  useEffect(() => {
+    const assignAddresses = async () => {
+      if (accounts.length > 1) {
+        await setRoles({
+          ...roles,
+          manufacturer: accounts[0],
+          warehouse: accounts[1],
+          deliveryhub: accounts[accounts.length - 2], // Get the second last account as the delivery hub address
+          customer: accounts[accounts.length - 1], // Get the last account as the customer address
+        });
 
-    setManufacturerRole("");
-  };
+        localStorage.setItem("mRole", accounts[0]);
+        localStorage.setItem("tpRole", accounts[1]);
+        localStorage.setItem("dhRole", accounts[accounts.length - 2]);
+        localStorage.setItem("cRole", accounts[accounts.length - 1]);
 
-  const handleAddwarehouseRole = async () => {
-    await setRoles({
-      ...roles,
-      warehouse: warehouseRole,
-    });
+        try {
+          // Add roles in the smart contract
+          await Promise.all([
+            supplyChainContract.methods
+              .addManufacturerRole(accounts[0])
+              .send({ from: accounts[0], gas: 100000 }),
 
-    localStorage.setItem("tpRole", warehouseRole);
-    await supplyChainContract.methods
-      .addwarehouseRole(warehouseRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+            supplyChainContract.methods
+              .addwarehouseRole(accounts[1])
+              .send({ from: accounts[0], gas: 100000 }),
 
-    setwarehouseRole("");
-  };
+            supplyChainContract.methods
+              .addDeliveryHubRole(accounts[accounts.length - 2])
+              .send({ from: accounts[0], gas: 100000 }),
 
-  const handleAddDeliveryHubRole = async () => {
-    await setRoles({
-      ...roles,
-      deliveryhub: deliveryHubRole,
-    });
+            supplyChainContract.methods
+              .addCustomerRole(accounts[accounts.length - 1])
+              .send({ from: accounts[0], gas: 100000 }),
+          ]);
 
-    localStorage.setItem("dhRole", deliveryHubRole);
-    await supplyChainContract.methods
-      .addDeliveryHubRole(deliveryHubRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+          setLoading(false);
+        } catch (error) {
+          console.log("Transaction reverted:", error.message);
+          setLoading(false);
+        }
+      }
+    };
 
-    setDeliveryHubRole("");
-  };
+    assignAddresses();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Removed the dependency array
 
-  const handleAddCustomerRole = async () => {
-    await setRoles({
-      ...roles,
-      customer: customerRole,
-    });
-
-    localStorage.setItem("cRole", customerRole);
-    await supplyChainContract.methods
-      .addCustomerRole(customerRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
-
-    setCustomerRole("");
-  };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
       <ResponsiveDrawer navItems={navItem}>
         <div className={classes.FormWrap}>
-          <h1 className={classes.pageHeading}>Add Roles </h1>
+          <h1 className={classes.pageHeading}>Roles Addresses</h1>
           {console.log(roles)}
 
           <form className={classes.root} noValidate autoComplete="off">
             <div className={classes.RoleForm}>
               <TextField
                 id="manufacturerRole"
-                label="Enter Manufacturer Addres. Select a different address for each station"
+                label="Manufacturer Address"
                 variant="outlined"
-                value={manufacturerRole}
-                onChange={(e) => setManufacturerRole(e.target.value)}
+                value={roles.manufacturer || ""}
                 style={{ width: "70%" }}
+                disabled
               />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleAddManufacturerRole}
-                style={{ width: "30%", marginLeft: "20px" }}
-              >
-                Add Manufacturer
-              </Button>
             </div>
           </form>
 
@@ -109,20 +89,12 @@ function RoleAdmin(props) {
             <div className={classes.RoleForm}>
               <TextField
                 id="warehouseRole"
-                label="Enter warehouse Address. Select a different address for each station "
+                label="Warehouse Address"
                 variant="outlined"
-                value={warehouseRole}
-                onChange={(e) => setwarehouseRole(e.target.value)}
+                value={roles.warehouse || ""}
                 style={{ width: "70%" }}
+                disabled
               />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleAddwarehouseRole}
-                style={{ width: "30%", marginLeft: "20px" }}
-              >
-                Add warehouse
-              </Button>
             </div>
           </form>
 
@@ -130,49 +102,26 @@ function RoleAdmin(props) {
             <div className={classes.RoleForm}>
               <TextField
                 id="deliveryHubRole"
-                label="Enter Delivery Hub Address. Select a different address for each station"
+                label="Delivery Hub Address"
                 variant="outlined"
-                value={deliveryHubRole}
-                onChange={(e) => setDeliveryHubRole(e.target.value)}
-                style={{ width: "70%" }}
+                value={roles.deliveryhub || ""}
+                style={{ width: "70  % " }}
+                disabled
               />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleAddDeliveryHubRole}
-                style={{ width: "30%", marginLeft: "20px" }}
-              >
-                add delivery hub
-              </Button>
             </div>
           </form>
-
           <form className={classes.root} noValidate autoComplete="off">
             <div className={classes.RoleForm}>
               <TextField
                 id="customerRole"
-                label=" Enter Customer Address. Select a different address for each station"
+                label="Customer Address"
                 variant="outlined"
-                value={customerRole}
-                onChange={(e) => setCustomerRole(e.target.value)}
+                value={roles.customer || ""}
                 style={{ width: "70%" }}
+                disabled
               />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleAddCustomerRole}
-                style={{ width: "30%", marginLeft: "20px" }}
-              >
-                add customer
-              </Button>
             </div>
           </form>
-        </div>
-        <div className={classes.FormWrap}>
-          <h1 className={classes.pageHeading}>Local Accounts</h1>
-          {accounts.slice(1).map((acc) => (
-            <h3 className={classes.tableCount}>{acc}</h3>
-          ))}
         </div>
       </ResponsiveDrawer>
     </div>
