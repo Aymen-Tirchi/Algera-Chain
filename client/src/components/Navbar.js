@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
   //change info of the withdrawer here
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#AC6E6E",
-    color: "#fff",
+    backgroundColor: "#C02235",
+    color: "#B1155C",
   },
   drawerHeader: {
     display: "flex",
@@ -161,65 +161,76 @@ export default function PersistentDrawerLeft({
           </IconButton>
         </div>
         <List>
-          <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+          <Link to="/" style={{ textDecoration: "none", color: "#DDE4DD" }}>
             <ListItem disablePadding>
               <ListItemIcon>
-                <HomeIcon />
+                <HomeIcon sx={{ fontSize: 35, color: '#DDE4DD' }} />
               </ListItemIcon>
               <ListItemText>Home</ListItemText>
             </ListItem>
           </Link>
           <Link
             to="/Explorer"
-            style={{ textDecoration: "none", color: "#fff" }}
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
             <ListItem disablePadding>
               <ListItemIcon>
-                <ScreenSearchDesktopIcon />
+                <ScreenSearchDesktopIcon sx={{ fontSize: 35, color: '#DDE4DD' }} />
               </ListItemIcon>
               <ListItemText>Search</ListItemText>
             </ListItem>
           </Link>
           <Link
-            to="/manufacturer/manufacture"
+            to="/roleAdmin"
             style={{ textDecoration: "none", color: "#fff" }}
           >
             <ListItem disablePadding>
               <ListItemIcon>
-                <MapsHomeWorkIcon />
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText>Set Roles</ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/manufacturer/manufacture"
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <MapsHomeWorkIcon sx={{ fontSize: 35, color: '#DDE4DD' }} />
               </ListItemIcon>
               <ListItemText>Manufacturer</ListItemText>
             </ListItem>
           </Link>
           <Link
             to="/warehouse/allProducts"
-            style={{ textDecoration: "none", color: "#fff" }}
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
             <ListItem disablePadding>
               <ListItemIcon>
-                <WarehouseIcon />
+                <WarehouseIcon sx={{ fontSize: 35, color: '#DDE4DD' }}/>
               </ListItemIcon>
               <ListItemText>Warehouse</ListItemText>
             </ListItem>
           </Link>
           <Link
             to="/DeliveryHub/receive"
-            style={{ textDecoration: "none", color: "#fff" }}
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
             <ListItem disablePadding>
               <ListItemIcon>
-                <LocalShippingIcon />
+                <LocalShippingIcon sx={{ fontSize: 35, color: '#DDE4DD' }}/>
               </ListItemIcon>
               <ListItemText>Delivery Hub</ListItemText>
             </ListItem>
           </Link>
           <Link
             to="/Customer/buy"
-            style={{ textDecoration: "none", color: "#fff" }}
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
             <ListItem disablePadding>
               <ListItemIcon>
-                <PersonIcon />
+                <PersonIcon sx={{ fontSize: 35, color: '#DDE4DD' }}/>
               </ListItemIcon>
               <ListItemText>Customer</ListItemText>
             </ListItem>

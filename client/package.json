@@ -15,6 +15,7 @@
     "@mui/material": "^5.3.1",
     "@react-spring/web": "^9.7.2",
     "clsx": "^1.1.1",
+    "emailjs-com": "^3.2.0",
     "express": "^4.17.1",
     "ganache-cli": "^6.12.2",
     "ganache-core": "^2.13.2",
