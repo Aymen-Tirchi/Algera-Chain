@@ -291,7 +291,7 @@ export const useStyles = makeStyles((theme) => ({
     minHeight: "500px",
   },
   sectionGridItem: {
-    backgroundColor: "#f2f0f1",
+    backgroundColor: "#edede9",
     textAlign: "center",
     padding: "30px",
     width: "200px",

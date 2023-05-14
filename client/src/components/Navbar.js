@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   //change info of the withdrawer here
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#C02235",
+    backgroundColor: "#343a40",
     color: "#B1155C",
   },
   drawerHeader: {
