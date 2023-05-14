@@ -180,7 +180,7 @@ export default function Home() {
               </Grid>
               <Grid item xs={12} md={1}>
                 <img
-                  src="trackingsys.png"
+                  src="trackih.png"
                   alt="Img"
                   style={{ width: "510px", height: "auto" }} // add inline styles for the smaller image size
                 />
@@ -246,7 +246,7 @@ export default function Home() {
             <Grid container spacing={6} className={classes.gridContainer}>
               <Grid item xs={12} md={5}>
                 <img
-                  src="https://as2.ftcdn.net/v2/jpg/02/91/22/93/1000_F_291229378_TfiyQrIPqpvmKvTREuWSZkxLGbb4eHEy.jpg"
+                  src="team.png"
                   alt="My Team"
                   className={classes.largeImage}
                 />

@@ -73,55 +73,58 @@ function RoleAdmin(props) {
           {console.log(roles)}
 
           <form className={classes.root} noValidate autoComplete="off">
-            <div className={classes.RoleForm}>
-              <TextField
-                id="manufacturerRole"
-                label="Manufacturer Address"
-                variant="outlined"
-                value={roles.manufacturer || ""}
-                style={{ width: "70%" }}
-                disabled
-              />
-            </div>
-          </form>
+  <div className={classes.RoleForm}>
+    <TextField
+      id="manufacturerRole"
+      label="Manufacturer Address"
+      variant="standard" 
+      color= "black"
+      value={roles.manufacturer || ""}
+      className={classes.textField}
+      disabled
+    />
+  </div>
+</form>
 
-          <form className={classes.root} noValidate autoComplete="off">
-            <div className={classes.RoleForm}>
-              <TextField
-                id="warehouseRole"
-                label="Warehouse Address"
-                variant="outlined"
-                value={roles.warehouse || ""}
-                style={{ width: "70%" }}
-                disabled
-              />
-            </div>
-          </form>
+<form className={classes.root} noValidate autoComplete="off">
+  <div className={classes.RoleForm}>
+    <TextField
+      id="warehouseRole"
+      label="Warehouse Address"
+      variant="standard" 
+      value={roles.warehouse || ""}
+      className={classes.textField}
+      disabled
+    />
+  </div>
+</form>
 
-          <form className={classes.root} noValidate autoComplete="off">
-            <div className={classes.RoleForm}>
-              <TextField
-                id="deliveryHubRole"
-                label="Delivery Hub Address"
-                variant="outlined"
-                value={roles.deliveryhub || ""}
-                style={{ width: "70  % " }}
-                disabled
-              />
-            </div>
-          </form>
-          <form className={classes.root} noValidate autoComplete="off">
-            <div className={classes.RoleForm}>
-              <TextField
-                id="customerRole"
-                label="Customer Address"
-                variant="outlined"
-                value={roles.customer || ""}
-                style={{ width: "70%" }}
-                disabled
-              />
-            </div>
-          </form>
+<form className={classes.root} noValidate autoComplete="off">
+  <div className={classes.RoleForm}>
+    <TextField
+      id="deliveryHubRole"
+      label="Delivery Hub Address"
+      variant="standard" 
+      value={roles.deliveryhub || ""}
+      className={classes.textField}
+      disabled
+    />
+  </div>
+</form>
+
+<form className={classes.root} noValidate autoComplete="off">
+  <div className={classes.RoleForm}>
+    <TextField
+      id="customerRole"
+      label="Customer Address"
+      variant="standard" 
+      value={roles.customer || ""}
+      className={classes.textField}
+      disabled
+    />
+  </div>
+</form>
+
         </div>
       </ResponsiveDrawer>
     </div>

@@ -19,10 +19,12 @@ export const useStyles = makeStyles((theme) => ({
     border: "2px solid #0a0a0a",
     borderRadius: 10,
     boxShadow: "2px 2px 10px #91A1FB",
+    
   },
   TableContainer: {
     maxHeight: 600,
     borderRadius: 9,
+    color: "black",
   },
   AddressCell: {
     maxWidth: 150,
@@ -332,5 +334,17 @@ export const useStyles = makeStyles((theme) => ({
   largeImage: {
     width: "100%",
   },
+  RoleForm: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "25px",
+  
+  },
+  textField: {
+    width: "90%",
+    color: "black"
+  },
+  
   
 }));
