@@ -20,7 +20,7 @@ import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 
 
 
@@ -404,6 +404,9 @@ export default function Home() {
                 <FaFacebook />
                 <FaTwitter />
                 <FaInstagram />
+                <a href="https://github.com/Aymen-Tirchi/AlgeriaChain" target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </a>
               </Box>
             </Box>
           </div>
