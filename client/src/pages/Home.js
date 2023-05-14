@@ -62,32 +62,46 @@ export default function Home() {
   const reviews = [
     {
       id: 1,
-      name: "Karl Brighton",
+      name: "Loudini Souad",
       statement:
-        "The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned.",
+         "As a front-end developer. I am always researching new technologies and techniques to improve the overall look and feel of our web applications while also assuring their accessibility and speed.",
       image_url:
-        "https://sweta-myteam-website-fm.netlify.app/static/media/avatar-kady.78fc482c.jpg",
-      position: "Software Engineer at Kadex",
+        "team.png",
     },
     {
       id: 2,
-      name: "Krishna Bells",
+      name: "Benammar khouloud",
       statement:
-        "We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!",
+        "As a Solidity developer, I specialize in creating smart contracts and decentralized applications on the Ethereum blockchain. My focus is on writing efficient and secure code that can withstand attacks and protect users' assets",
       image_url:
-        "https://sweta-myteam-website-fm.netlify.app/static/media/avatar-aiysha.e119a0c1.jpg",
-      position: "Product Manager at Google",
+        "team.png",
     },
     {
       id: 3,
-      name: "Ben Spiff",
+      name: "Nouacer Ikhlas",
       statement:
-        "Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month.",
+        "As a UI/UX designer, my passion is to create intuitive and engaging interfaces that meet the user's needs and exceed their expectations. I am always researching and testing design patterns and user flows to ensure a seamless and delightful experience",
       image_url:
-        "https://sweta-myteam-website-fm.netlify.app/static/media/avatar-arthur.098c2e26.jpg",
-      position: "Founder of Crypto",
+      "team.png",
+    },
+    {
+      id: 4,
+      name: "Tirchi Aymen",
+      statement:
+        "As a back-end developer, my focus is on building robust and scalable systems that power the frontend and provide a seamless user experience.I ensure that our products are reliable, efficient, and secure.",
+      image_url:
+      "team.png",
+    },
+    {
+      id: 5,
+      name: "Boukethir Youcef",
+      statement:
+        "As a front-end developer, I am passionate about creating user-friendly and responsive interfaces that provide a great experience for our users. I enjoy experimenting with new technologies and frameworks to continuously improve our products.",
+      image_url:
+       "team.png",
     },
   ];
+  
 
   const sectionItems = [
     {
@@ -218,33 +232,7 @@ export default function Home() {
               minHeight: "300px",
             }}
           >
-            <Grid container spacing={2}>
-              {reviews.map((review) => (
-                <Grid item sm={12} md={4} key={review.id}>
-                  <Card className={classes.testimonialCard}>
-                    <CardContent>
-                      <Typography className={classes.testimonialStatement}>
-                        "{review.statement}"
-                      </Typography>
-                      <Box sx={{ display: "flex" }}>
-                        <Avatar
-                          src={review.image_url}
-                          size="large"
-                          className={classes.avatar}
-                        />
-                        <Box>
-                          <Typography>{review.name}</Typography>
-                          <Typography className={classes.testimonialPosition}>
-                            {review.position}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
+
           <Box className={classes.aboutUsContainer}>
             <Grid container spacing={6} className={classes.gridContainer}>
               <Grid item xs={12} md={5}>
@@ -279,6 +267,33 @@ export default function Home() {
                   CONTACT US
                 </Button>
               </Grid>
+            </Grid>
+          </Box>
+          <Grid container spacing={2}>
+              {reviews.map((review) => (
+                <Grid item sm={12} md={4} key={review.id}>
+                  <Card className={classes.testimonialCard}>
+                    <CardContent>
+                      <Typography className={classes.testimonialStatement}>
+                        "{review.statement}"
+                      </Typography>
+                      <Box sx={{ display: "flex" }}>
+                        <Avatar
+                          src={review.image_url}
+                          size="large"
+                          className={classes.avatar}
+                        />
+                        <Box>
+                          <Typography>{review.name}</Typography>
+                          <Typography className={classes.testimonialPosition}>
+                            {review.position}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
             </Grid>
           </Box>
           <Grid
