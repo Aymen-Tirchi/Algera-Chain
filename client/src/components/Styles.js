@@ -4,7 +4,6 @@ export const useStyles = makeStyles((theme) => ({
   pageWrap: {
     textAlign: "center",
     color: "#0a0a0a",
-    
   },
   pageHeading: {
     textAlign: "center",
@@ -97,7 +96,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: "#fff",
+    backgroundColor: "#c9d3cf",
     padding: 15,
     outline: "none",
     width: "min(90%, 650px)",
@@ -157,190 +156,181 @@ export const useStyles = makeStyles((theme) => ({
     border: "2px solid #0a0a0a",
     margin: "20px auto",
   },
-  
-    formContainer: {
-      maxWidth: '600px',
-      width: '80%',
-      margin: 'auto',
-      padding: theme.spacing(3),
-      backgroundColor: '#f7f7f7',
-      borderRadius: '20px',
-      boxShadow: "2px 2px 10px #002B5B",
-    },
-    form: {
-      
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    formHeading: {
-      marginBottom: theme.spacing(2),
-      textAlign: 'center',
-    },
-    inputField: {
-      marginBottom: theme.spacing(2),
-    },
-    textArea: {
-      marginBottom: theme.spacing(2),
-      width: '100%',
-      padding: theme.spacing(1),
-      fontSize: '16px',
-      border: '1px solid #ccc',
-      borderRadius: '5px',
-      color: 'black',
-    },
-    footerContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '10vh',
-      padding: '10px',
-      backgroundColor: '#AC6E6E',
-    },
-    footerText: {
-      paddingBottom: '3px',
-      color: 'black',
-      fontWeight: 'bold',
-      textTransform: 'uppercase',
-      letterSpacing: '1px',
-      textAlign: 'center',
-    },
-    footerDate: {
-      opacity: '0.6',
-      color: 'black',
-      textAlign: 'center',
-      fontSize: '0.8rem',
-      marginTop: '20px',
-    },
-    socialIcons: {
-      display: 'flex',
-      justifyContent: 'center',
-      marginTop: '20px',
-      '& svg': {
-        color: 'black',
-        fontSize: '1.5rem',
-        marginLeft: '10px',
-        marginRight: '10px',
-        cursor: 'pointer',
-        transition: 'all 0.3s ease',
-        '&:hover': {
-          transform: 'scale(1.2)',
-        },
+
+  formContainer: {
+    maxWidth: "600px",
+    width: "80%",
+    margin: "auto",
+    padding: theme.spacing(3),
+    backgroundColor: "#f7f7f7",
+    borderRadius: "20px",
+    boxShadow: "2px 2px 10px #002B5B",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  formHeading: {
+    marginBottom: theme.spacing(2),
+    textAlign: "center",
+  },
+  inputField: {
+    marginBottom: theme.spacing(2),
+  },
+  textArea: {
+    marginBottom: theme.spacing(2),
+    width: "100%",
+    padding: theme.spacing(1),
+    fontSize: "16px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    color: "black",
+  },
+  footerContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "10vh",
+    padding: "10px",
+    backgroundColor: "#c9d3cf",
+  },
+  footerText: {
+    paddingBottom: "3px",
+    color: "black",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    letterSpacing: "1px",
+    textAlign: "center",
+  },
+  footerDate: {
+    opacity: "0.6",
+    color: "black",
+    textAlign: "center",
+    fontSize: "0.8rem",
+    marginTop: "20px",
+  },
+  socialIcons: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "20px",
+    "& svg": {
+      color: "black",
+      fontSize: "1.5rem",
+      marginLeft: "10px",
+      marginRight: "10px",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+      "&:hover": {
+        transform: "scale(1.2)",
       },
     },
-    '.fade-enter': {
-      opacity: 0,
-      transform: 'translateY(-50%)'
+  },
+  ".fade-enter": {
+    opacity: 0,
+    transform: "translateY(-50%)",
+  },
+
+  ".fade-enter-active": {
+    opacity: 1,
+    transform: "translateY(0)",
+    transition: "all 500ms",
+  },
+
+  ".fade-exit": {
+    opacity: 1,
+    transform: "translateY(0)",
+  },
+
+  ".fade-exit-active": {
+    opacity: 0,
+    transform: "translateY(50%)",
+    transition: "all 500ms",
+  },
+
+  submitButton: {
+    width: "100%",
+    padding: theme.spacing(1.5),
+    fontSize: "16px",
+    fontWeight: "bold",
+    backgroundColor: "#0077ff",
+    color: "#fff",
+    borderRadius: "5px",
+    boxShadow: "none",
+    "&:hover": {
+      backgroundColor: "#0060cb",
     },
+  },
+  subtitle: {
+    //opacity: '0.4',
+    paddingBottom: "30px",
+    color: "#4E4D4D",
+  },
+  title: {
+    paddingBottom: "15px",
+    fontWeight: "bold",
+  },
+  gridContainer: {
+    display: "flex",
+    alignItems: "center",
+    maxWidth: "1300px",
+    padding: "50px",
+  },
+  heroBox: {
+    width: "100%",
+    display: "flex",
+    minHeight: "600px",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  sectionGridContainer: {
+    width: "100%",
+    minHeight: "500px",
+  },
+  sectionGridItem: {
+    backgroundColor: "#f2f0f1",
+    textAlign: "center",
+    padding: "30px",
+    width: "200px",
+    borderRadius: "10px",
+    margin: "10px !important",
+  },
+  testimonialCard: {
+    backgroundColor: "#fff",
+    padding: "10px",
+    minHeight: "200px",
+    display: "flex",
+    alignItems: "center",
+  },
+
+  testimonialStatement: {
+    paddingBottom: "25px",
+  },
+  avatar: {
+    marginRight: "10px",
+  },
+  testimonialPosition: {
+    fontSize: "14px",
+    opacity: "0.6",
+  },
+  aboutUsContainer: {
+    width: "100%",
+    display: "flex",
+    minHeight: "400px",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "30px 0px 50px 0px",
+  },
+
+  aboutUsSubtitle: {
+    opacity: "0.7",
+    paddingBottom: "30px",
+    fontSize: "18px",
+    color: "#242020",
+  },
+  largeImage: {
+    width: "100%",
+  },
   
-    '.fade-enter-active': {
-      opacity: 1,
-      transform: 'translateY(0)',
-      transition: 'all 500ms'
-    },
-  
-    '.fade-exit': {
-      opacity: 1,
-      transform: 'translateY(0)'
-    },
-  
-    '.fade-exit-active': {
-      opacity: 0,
-      transform: 'translateY(50%)',
-      transition: 'all 500ms'
-    },
-    
-  
-    submitButton: {
-      width: '100%',
-      padding: theme.spacing(1.5),
-      fontSize: '16px',
-      fontWeight: 'bold',
-      backgroundColor: '#0077ff',
-      color: '#fff',
-      borderRadius: '5px',
-      boxShadow: 'none',
-      '&:hover': {
-        backgroundColor: '#0060cb',
-      },
-    },
-    subtitle: {
-      //opacity: '0.4',
-      paddingBottom: '30px',
-      color: '#4E4D4D',
-    },
-    title: {
-      paddingBottom: '15px',
-      fontWeight: 'bold',
-    },
-    gridContainer: {
-      display: 'flex',
-      alignItems: 'center',
-      maxWidth: '1300px',
-      padding: '50px',
-    },
-    heroBox: {
-      width: '100%',
-      display: 'flex',
-      minHeight: '600px',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    sectionGridContainer: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '100%',
-      minHeight: '500px',
-    },
-    sectionGridItem: {
-      backgroundColor: '#f2f0f1',
-      textAlign: 'center',
-      padding: '30px',
-      width: '200px',
-      borderRadius: '10px',
-      margin: '10px !important',
-    },
-    testimonialCard: {
-      backgroundColor: '#fff',
-      padding: '10px',
-      minHeight: '200px',
-      display: 'flex',
-      alignItems: 'center',
-    },
-    
-    testimonialStatement: {
-      paddingBottom: '25px',
-    },
-    avatar: {
-      marginRight: '10px',
-    },
-    testimonialPosition: {
-      fontSize: '14px',
-      opacity: '0.6',
-      
-    },
-    aboutUsContainer: {
-      width: '100%',
-      display: 'flex',
-      minHeight: '400px',
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: '30px 0px 50px 0px',
-    },
-    
-    aboutUsSubtitle: {
-      opacity: '0.7',
-      paddingBottom: '30px',
-      fontSize: '18px', 
-      color :"#242020"
-     
-    },
-    largeImage: {
-      width: '100%',
-    },
-    
-    
-  }))
-  
+}));

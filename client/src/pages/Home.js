@@ -13,14 +13,14 @@ import {
   TextareaAutosize,
   Avatar,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 const cards = [
   {
     title: "Step 1",
@@ -89,19 +89,19 @@ export default function Home() {
   const sectionItems = [
     {
       id: 1,
-      icon: <EngineeringOutlinedIcon sx={{ fontSize: 100 }} color="primary" />,
+      icon: <EngineeringOutlinedIcon sx={{ fontSize: 100, color: '#C02235' }} color="primary" />,
       sentence:
         "Solving world problems through various web applications using efficient programs and tools",
     },
     {
       id: 2,
-      icon: <AllInclusiveIcon sx={{ fontSize: 100 }} color="primary" />,
+      icon: <AllInclusiveIcon sx={{ fontSize: 100, color: '#C02235' }} color="primary" />,
       sentence:
         "Through team work, we collaborate and deliver quality projects of high standards",
     },
     {
       id: 3,
-      icon: <PaidOutlinedIcon sx={{ fontSize: 100 }} color="primary" />,
+      icon: <PaidOutlinedIcon sx={{ fontSize: 100, color: '#C02235' }} color="primary" />,
       sentence: "Flexible payment plan is applicable to all our services",
     },
   ];
@@ -172,10 +172,10 @@ export default function Home() {
                   Blockchain in Supply Chain
                 </Typography>
                 <Typography variant="h6" className={classes.subtitle}>
-                We use blockchain technology to provide innovative solutions for real-world problems.
-                With Algeria Chain, you can trust that your tracking needs are being handled with care.
-                Now, Tracking your product is just a click away.
-
+                  We use blockchain technology to provide innovative solutions
+                  for real-world problems. With Algeria Chain, you can trust
+                  that your tracking needs are being handled with care. Now,
+                  Tracking your product is just a click away.
                 </Typography>
               </Grid>
               <Grid item xs={12} md={1}>
@@ -188,9 +188,9 @@ export default function Home() {
             </Grid>
           </Box>
 
-          <Divider dark />
-          <Box sx={{ flexGrow: 1, minHeight: "400px" }}>
-            <Grid container className={classes.sectionGridContainer}>
+          <Divider />
+          <Box sx={{ flexGrow: 1, minHeight:"400px" }}>
+            <Grid container className={classes.sectionGridContainer} direction="row" justify="space-between">
               {sectionItems.map((item) => (
                 <Grid
                   item
@@ -261,10 +261,11 @@ export default function Home() {
                   We build, We revive
                 </Typography>
                 <Typography className={classes.aboutUsSubtitle}>
-                Our team is made up of experts in blockchain technology, logistics, and software development,
-                 who are passionate about creating a better future through technology. We are
-                 committed to delivering high-quality solutions that meet the needs of our clients. 
-                 
+                  Our team is made up of experts in blockchain technology,
+                  logistics, and software development, who are passionate about
+                  creating a better future through technology. We are committed
+                  to delivering high-quality solutions that meet the needs of
+                  our clients.
                 </Typography>
                 <Button
                   variant="contained"
@@ -315,7 +316,7 @@ export default function Home() {
 
           <Divider />
           <div style={{ spacing: "20px" }}>
-            <Divider dark />
+            <Divider />
 
             <div
               style={{
@@ -381,12 +382,14 @@ export default function Home() {
               </Box>
             </div>
             <Divider />
-            
 
-            <Box sx={{ flexGrow: 1 }} className={classes.footerContainer} id="CONTACT US">
+            <Box
+              sx={{ flexGrow: 1 }}
+              className={classes.footerContainer}
+              id="CONTACT US"
+            >
               <Typography className={classes.footerText}>
-                Contact us by{" "} 
-              
+                Contact us by{" "}
               </Typography>
               <Typography className={classes.footerDate}>
                 Phone: 123-456-7890
@@ -395,9 +398,9 @@ export default function Home() {
                 Location: Batna, Algeria
               </Typography>
               <Box className={classes.socialIcons}>
-               <FaFacebook />
-               <FaTwitter />
-              <FaInstagram />
+                <FaFacebook />
+                <FaTwitter />
+                <FaInstagram />
               </Box>
             </Box>
           </div>
