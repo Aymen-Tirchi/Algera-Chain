@@ -64,9 +64,9 @@ export default function Home() {
       id: 1,
       name: "LOUDINI Souad",
       statement:
-        "As a front-end developer. I am always researching new technologies and techniques to improve the overall look and feel of our web applications while also assuring their accessibility and speed.",
+        "As a front-end developer. I am always researching new technologies and techniques to improve the overall look of our web apps .I value collaboration with designers and backend developers to ensure the smooth integration of UI components with robust functionality.",
       image_url:
-        "team.png",
+        "loudini.jpg",
     },
     {
       id: 2,
@@ -74,7 +74,7 @@ export default function Home() {
       statement:
         "As a Solidity developer, I specialize in creating smart contracts and decentralized applications on the Ethereum blockchain. My focus is on writing efficient and secure code that can withstand attacks and protect users' assets",
       image_url:
-        "team.png",
+        "khouloud.jpg",
     },
     {
       id: 3,
@@ -82,15 +82,15 @@ export default function Home() {
       statement:
         "As a UI/UX designer, my passion is to create intuitive and engaging interfaces that meet the user's needs and exceed their expectations. I am always researching and testing design patterns and user flows to ensure a seamless and delightful experience",
       image_url:
-      "team.png",
+      "ikhlas.jpg",
     },
     {
       id: 4,
       name: "TIRCHI Aymen",
       statement:
-        "As a back-end developer, my focus is on building robust and scalable systems that power the frontend and provide a seamless user experience.I ensure that our products are reliable, efficient, and secure.",
+        "As a back-end developer, my focus is on building robust and scalable systems that power the frontend and provide a seamless user experience.I ensure that our products are reliable, efficient, and secure.I am committed to continuous learning, keeping up with the latest backend technologies ",
       image_url:
-      "team.png",
+      "ayman.png",
     },
     {
       id: 5,
@@ -261,7 +261,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   color="primary"
-                  sx={{ width: "200px", fontSize: "16px" }}
+                  sx={{ width: "250px", fontSize: "16px" }}
                   href="#CONTACT US"
                 >
                   CONTACT US
@@ -387,6 +387,7 @@ export default function Home() {
                   />
 
                   <Button
+                  
                     variant="contained"
                     type="submit"
                     color="primary"

@@ -322,11 +322,21 @@ export default function Explorer(props) {
                   </TableContainer>
                 </Paper>
               </>
+
+              
             ) : (
-              <>{Text ? <p>Product Not Found</p> : <></>}</>
+              <>{Text ? 
+                <p id="notfound" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  
+                <img src="NotFound.svg" alt="Product Not Found" style={{ width: '470px', height: '400px' }}  /> 
+                <span style={{ marginTop: '5px', fontWeight: 'semi-bold' }}>Product Not Found</span>  
+               </p> : <></>}</>
             )}
           </>
         )}
+
+
+
       </Navbar>
     </>
   );
