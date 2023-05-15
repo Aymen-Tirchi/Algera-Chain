@@ -16,9 +16,9 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 1500,
     margin: "5px auto",
-    border: "2px solid #0a0a0a",
+    border: "2px solid #7B0402",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #91A1FB",
+    boxShadow: "2px 2px 10px #7B0402",
     
   },
   TableContainer: {
@@ -38,7 +38,7 @@ export const useStyles = makeStyles((theme) => ({
     color: "#0a0a0a",
   },
   TableHead: {
-    backgroundColor: "#0a0a0a !important",
+    backgroundColor: "#7B0402 !important",
     color: "#fff !important",
   },
   TableCell: {
@@ -50,7 +50,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "30px auto",
     padding: 20,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #91A1FB",
+    boxShadow: "2px 2px 10px #7B0402",
   },
 
   RoleForm: {
@@ -68,7 +68,7 @@ export const useStyles = makeStyles((theme) => ({
   ProductPaper: {
     padding: 10,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #91A1FB",
+    boxShadow: "2px 2px 10px #7B0402",
     border: "2px solid #0a0a0a",
   },
   ExplorerdRow: {
@@ -88,7 +88,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "5px auto",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #91A1FB",
+    boxShadow: "2px 2px 10px #7B0402",
   },
 
   //Modal
@@ -105,7 +105,7 @@ export const useStyles = makeStyles((theme) => ({
     height: "80%",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #91A1FB",
+    boxShadow: "2px 2px 10px #7B0402",
     overflow: "scroll",
   },
   Reciptpaper: {
@@ -117,7 +117,7 @@ export const useStyles = makeStyles((theme) => ({
     height: "500px",
     //border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #91A1FB",
+    boxShadow: "2px 2px 10px #000000",
     overflow: "scroll",
   },
   dRow: {
@@ -356,13 +356,7 @@ export const useStyles = makeStyles((theme) => ({
   largeImage: {
     width: "100%",
   },
-  RoleForm: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: "25px",
   
-  },
   textField: {
     width: "90%",
     color: "black"

@@ -62,15 +62,15 @@ export default function Home() {
   const reviews = [
     {
       id: 1,
-      name: "Loudini Souad",
+      name: "LOUDINI Souad",
       statement:
-         "As a front-end developer. I am always researching new technologies and techniques to improve the overall look and feel of our web applications while also assuring their accessibility and speed.",
+        "As a front-end developer. I am always researching new technologies and techniques to improve the overall look and feel of our web applications while also assuring their accessibility and speed.",
       image_url:
         "team.png",
     },
     {
       id: 2,
-      name: "Benammar khouloud",
+      name: "BENAMMAR khouloud",
       statement:
         "As a Solidity developer, I specialize in creating smart contracts and decentralized applications on the Ethereum blockchain. My focus is on writing efficient and secure code that can withstand attacks and protect users' assets",
       image_url:
@@ -78,7 +78,7 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "Nouacer Ikhlas",
+      name: "NOUACER Ikhlas",
       statement:
         "As a UI/UX designer, my passion is to create intuitive and engaging interfaces that meet the user's needs and exceed their expectations. I am always researching and testing design patterns and user flows to ensure a seamless and delightful experience",
       image_url:
@@ -86,7 +86,7 @@ export default function Home() {
     },
     {
       id: 4,
-      name: "Tirchi Aymen",
+      name: "TIRCHI Aymen",
       statement:
         "As a back-end developer, my focus is on building robust and scalable systems that power the frontend and provide a seamless user experience.I ensure that our products are reliable, efficient, and secure.",
       image_url:
@@ -94,11 +94,11 @@ export default function Home() {
     },
     {
       id: 5,
-      name: "Boukethir Youcef",
+      name: "BOUKETHIR Youcef",
       statement:
         "As a front-end developer, I am passionate about creating user-friendly and responsive interfaces that provide a great experience for our users. I enjoy experimenting with new technologies and frameworks to continuously improve our products.",
       image_url:
-       "team.png",
+      "team.png",
     },
   ];
   
