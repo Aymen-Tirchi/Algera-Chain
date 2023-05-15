@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     width: '40%',
     border:"2px solid #0a0a0a",
     borderRadius:50,
-    boxShadow:"2px 2px 10px #7B0402 ",
+    boxShadow:"2px 2px 10px #969393 ",
     
     
 
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 17
   },
   iconButton: {
-    padding: 10,
+    padding: 13,
   },
   divider: {
     height: 28,

@@ -330,9 +330,7 @@ export default function Home() {
               <br />
             </Grid>
           </Grid>
-          <Divider />
 
-          <Divider />
           <div style={{ spacing: "20px" }}>
             <Divider />
 

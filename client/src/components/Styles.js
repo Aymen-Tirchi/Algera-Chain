@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "5px auto",
     border: "2px solid #7B0402",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #7B0402",
+    boxShadow: "2px 2px 10px #969393",
     
   },
   TableContainer: {
@@ -50,7 +50,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "30px auto",
     padding: 20,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #7B0402",
+    boxShadow: "2px 2px 10px #969393",
   },
 
   RoleForm: {
@@ -68,7 +68,7 @@ export const useStyles = makeStyles((theme) => ({
   ProductPaper: {
     padding: 10,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #7B0402",
+    boxShadow: "2px 2px 10px #969393",
     border: "2px solid #0a0a0a",
   },
   ExplorerdRow: {
@@ -88,7 +88,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "5px auto",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #7B0402",
+    boxShadow: "2px 2px 10px #969393",
   },
 
   //Modal
@@ -105,7 +105,7 @@ export const useStyles = makeStyles((theme) => ({
     height: "80%",
     border: "2px solid #0a0a0a",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #7B0402",
+    boxShadow: "2px 2px 10px #969393",
     overflow: "scroll",
   },
   Reciptpaper: {
@@ -252,18 +252,21 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   submitButton: {
-    width: "100%",
-    padding: theme.spacing(1.5),
-    fontSize: "16px",
-    fontWeight: "bold",
-    backgroundColor: "#0077ff",
-    color: "#fff",
-    borderRadius: "5px",
-    boxShadow: "none",
-    "&:hover": {
-      backgroundColor: "#0060cb",
-    },
+    
+      "--hover-shadows": "16px 16px 45px #0a0202, -16px -16px 33px #303030",
+      "--accent": "fuchsia",
+      "font-weight": "bold",
+      "letter-spacing": "0.1em",
+      "border": "none",
+      "border-radius": "1.1em",
+      "background-color": "#212121",
+      "color": "white",
+      "padding": "1em 2em",
+      "transition": "box-shadow ease-in-out 0.4s, background-color ease-in-out 0.2s, letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s",
+      "box-shadow": "13px 13px 10px #1c1c1c, -13px -13px 10px #0a0202"
+    
   },
+  
   subtitle: {
     //opacity: '0.4',
     paddingBottom: "30px",
