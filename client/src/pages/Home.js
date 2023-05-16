@@ -12,6 +12,7 @@ import {
   TextField,
   TextareaAutosize,
   Avatar,
+  IconButton,
 } from "@material-ui/core";
 
 import { useState } from "react";
@@ -19,136 +20,182 @@ import emailjs from "emailjs-com";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 
-
-
-const cards = [
-  {
-    title: "Step 1",
-    content: "The Manufacturer adds a product to the system",
-  },
-  {
-    title: "Step 2",
-    content: "The warehouse sellers buy the product from the manufacturer",
-  },
-  {
-    title: "Step 3",
-    content:
-      "After the warehouse sellers purchase the product from the manufacturer, the manufacturer will ship the product to the warehouse",
-  },
-  {
-    title: "Step 4",
-    content:
-      "The customer purchases a product from the list of available products",
-  },
-  {
-    title: "Step 5",
-    content:
-      "The warehouse  ships the bought product to delivery hub  and the delivery hub  verifies and receives it",
-  },
-  {
-    title: "Step 6",
-    content:
-      "the delivery hub  ships the bought product to the customer and the customer verifies and receives it",
-  },
-];
+import { styled } from "@mui/system";
 
 export default function Home() {
   const classes = useStyles();
   const navItem = [1];
-  const [currentCard, setCurrentCard] = useState(0);
+
   const reviews = [
     {
       id: 1,
       name: "LOUDINI Souad",
       statement:
         "As a front-end developer. I am always researching new technologies and techniques to improve the overall look of our web apps .I value collaboration with designers and backend developers to ensure the smooth integration of UI components with robust functionality.",
-      image_url:
-        "loudini.jpg",
+      image_url: "loudini.jpg",
     },
     {
       id: 2,
       name: "BENAMMAR khouloud",
       statement:
         "As a Solidity developer, I specialize in creating smart contracts and decentralized applications on the Ethereum blockchain. My focus is on writing efficient and secure code that can withstand attacks and protect users' assets",
-      image_url:
-        "khouloud.jpg",
+      image_url: "khouloud.jpg",
     },
     {
       id: 3,
       name: "NOUACER Ikhlas",
       statement:
         "As a UI/UX designer, my passion is to create intuitive and engaging interfaces that meet the user's needs and exceed their expectations. I am always researching and testing design patterns and user flows to ensure a seamless and delightful experience",
-      image_url:
-      "ikhlas.jpg",
+      image_url: "ikhlas.jpg",
     },
     {
       id: 4,
       name: "TIRCHI Aymen",
       statement:
         "As a back-end developer, my focus is on building robust and scalable systems that power the frontend and provide a seamless user experience.I ensure that our products are reliable, efficient, and secure.I am committed to continuous learning, keeping up with the latest backend technologies ",
-      image_url:
-      "ayman.png",
+      image_url: "ayman.png",
     },
     {
       id: 5,
       name: "BOUKETHIR Youcef",
       statement:
         "As a front-end developer, I am passionate about creating user-friendly and responsive interfaces that provide a great experience for our users. I enjoy experimenting with new technologies and frameworks to continuously improve our products.",
-      image_url:
-      "team.png",
+      image_url: "team.png",
     },
   ];
-  
 
   const sectionItems = [
     {
       id: 1,
-      icon: <EngineeringOutlinedIcon sx={{ fontSize: 100, color: '#212529' }} color="primary" />,
+      icon: (
+        <EngineeringOutlinedIcon
+          sx={{ fontSize: 100, color: "#212529" }}
+          color="primary"
+        />
+      ),
       sentence:
         "Solving world problems through various web applications using efficient programs and tools",
     },
     {
       id: 2,
-      icon: <AllInclusiveIcon sx={{ fontSize: 100, color: '#212529' }} color="primary" />,
+      icon: (
+        <AllInclusiveIcon
+          sx={{ fontSize: 100, color: "#212529" }}
+          color="primary"
+        />
+      ),
       sentence:
         "Through team work, we collaborate and deliver quality projects of high standards",
     },
     {
       id: 3,
-      icon: <PaidOutlinedIcon sx={{ fontSize: 100, color: '#212529' }} color="primary" />,
+      icon: (
+        <PaidOutlinedIcon
+          sx={{ fontSize: 100, color: "#212529" }}
+          color="primary"
+        />
+      ),
       sentence: "Flexible payment plan is applicable to all our services",
     },
   ];
+  const FlippableCard = styled(Card)`
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 
-  const [currentPairIndex] = useState(0);
-  const renderCards = () => {
-    const pair1Index = currentPairIndex;
-    const pair2Index = currentPairIndex + 2;
+    &:hover {
+      transform: rotateY(180deg);
+    }
+
+    &.flipped {
+      transform: rotateY(180deg);
+    }
+  `;
+
+  const FrontCardContent = styled(CardContent)`
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  `;
+
+  const BackCardContent = styled(CardContent)`
+    transform: rotateY(180deg);
+  `;
+  const CardBox = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const cards = [
+      {
+        title: "Step 1",
+        content: "The Manufacturer adds a product to the system",
+      },
+      {
+        title: "Step 2",
+        content: "The warehouse sellers buy the product from the manufacturer",
+      },
+      {
+        title: "Step 3",
+        content: "The warehouse sellers buy the product from the manufacturer",
+      },
+      {
+        title: "Step 4",
+        content: "The warehouse sellers buy the product from the manufacturer",
+      },
+      {
+        title: "Step 5",
+        content: "The warehouse sellers buy the product from the manufacturer",
+      },
+      {
+        title: "Step 6",
+        content: "The warehouse sellers buy the product from the manufacturer",
+      },
+    ];
+
+    const handlePrev = () => {
+      setCurrentIndex(
+        (prevIndex) => (prevIndex - 2 + cards.length) % cards.length
+      );
+    };
+
+    const handleNext = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 2) % cards.length);
+    };
 
     return (
-      <TransitionGroup>
-        <CSSTransition key={pair1Index} classNames="card" timeout={500}>
-          <Card>
-            <CardContent>
-              <h2>{cards[pair1Index].title}</h2>
-              <p>{cards[pair1Index].content}</p>
-            </CardContent>
-          </Card>
-        </CSSTransition>
-        {pair2Index < cards.length && (
-          <CSSTransition key={pair2Index} classNames="card" timeout={500}>
-            <Card>
-              <CardContent>
-                <h2>{cards[pair2Index].title}</h2>
-                <p>{cards[pair2Index].content}</p>
-              </CardContent>
-            </Card>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100vh"
+      >
+        <IconButton onClick={handlePrev}>
+          <ChevronLeft />
+        </IconButton>
+        <Box display="flex" justifyContent="center" alignItems="center">
+          {cards.slice(currentIndex, currentIndex + 2).map((card, index) => (
+            <FlippableCard
+              key={index}
+              sx={{ mx: 2 }}
+              style={{
+                transform: `rotateY(${(index + currentIndex) * 180}deg)`,
+              }}
+            >
+              <FrontCardContent>
+                <h2>{card.title}</h2>
+                <p>{card.content}</p>
+              </FrontCardContent>
+            </FlippableCard>
+          ))}
+        </Box>
+        <IconButton onClick={handleNext}>
+          <ChevronRight />
+        </IconButton>
+      </Box>
     );
   };
 
@@ -204,10 +251,9 @@ export default function Home() {
               </Grid>
             </Grid>
           </Box>
-
-          <Divider />
-          <Box sx={{ flexGrow: 1, minHeight:"400px" }}>
-            <Grid container className={classes.sectionGridContainer} >
+          <CardBox />
+          <Box sx={{ flexGrow: 1, minHeight: "400px" }}>
+            <Grid container className={classes.sectionGridContainer}>
               {sectionItems.map((item) => (
                 <Grid
                   item
@@ -232,44 +278,43 @@ export default function Home() {
               minHeight: "300px",
             }}
           >
+            <Box className={classes.aboutUsContainer}>
+              <Grid container spacing={6} className={classes.gridContainer}>
+                <Grid item xs={12} md={5}>
+                  <img
+                    src="team.png"
+                    alt="My Team"
+                    className={classes.largeImage}
+                  />
+                </Grid>
 
-          <Box className={classes.aboutUsContainer}>
-            <Grid container spacing={6} className={classes.gridContainer}>
-              <Grid item xs={12} md={5}>
-                <img
-                  src="team.png"
-                  alt="My Team"
-                  className={classes.largeImage}
-                />
+                <Grid item xs={12} md={6}>
+                  <Typography
+                    variant="h3"
+                    fontWeight={700}
+                    className={classes.title}
+                  >
+                    We build, We revive
+                  </Typography>
+                  <Typography className={classes.aboutUsSubtitle}>
+                    Our team is made up of experts in blockchain technology,
+                    logistics, and software development, who are passionate
+                    about creating a better future through technology. We are
+                    committed to delivering high-quality solutions that meet the
+                    needs of our clients.
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    sx={{ width: "250px", fontSize: "16px" }}
+                    href="#CONTACT US"
+                  >
+                    CONTACT US
+                  </Button>
+                </Grid>
               </Grid>
-
-              <Grid item xs={12} md={6}>
-                <Typography
-                  variant="h3"
-                  fontWeight={700}
-                  className={classes.title}
-                >
-                  We build, We revive
-                </Typography>
-                <Typography className={classes.aboutUsSubtitle}>
-                  Our team is made up of experts in blockchain technology,
-                  logistics, and software development, who are passionate about
-                  creating a better future through technology. We are committed
-                  to delivering high-quality solutions that meet the needs of
-                  our clients.
-                </Typography>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  sx={{ width: "250px", fontSize: "16px" }}
-                  href="#CONTACT US"
-                >
-                  CONTACT US
-                </Button>
-              </Grid>
-            </Grid>
-          </Box>
-          <Grid container spacing={2}>
+            </Box>
+            <Grid container spacing={2}>
               {reviews.map((review) => (
                 <Grid item sm={12} md={4} key={review.id}>
                   <Card className={classes.testimonialCard}>
@@ -296,44 +341,8 @@ export default function Home() {
               ))}
             </Grid>
           </Box>
-          <Grid
-            container
-            spacing={3}
-            style={{ height: "100%", minHeight: "90vh", width: "100%" }}
-          >
-            <Grid
-              item
-              xs={false}
-              sm={3}
-              style={{
-                height: "100%",
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            ></Grid>
-
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              style={{
-                height: "100%",
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "scroll",
-              }}
-            >
-              <br />
-            </Grid>
-          </Grid>
 
           <div style={{ spacing: "20px" }}>
-            <Divider />
-
             <div
               style={{
                 display: "flex",
@@ -387,7 +396,6 @@ export default function Home() {
                   />
 
                   <Button
-                  
                     variant="contained"
                     type="submit"
                     color="primary"
@@ -418,7 +426,11 @@ export default function Home() {
                 <FaFacebook />
                 <FaTwitter />
                 <FaInstagram />
-                <a href="https://github.com/Aymen-Tirchi/AlgeriaChain" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/Aymen-Tirchi/AlgeriaChain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaGithub />
                 </a>
               </Box>
