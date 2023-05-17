@@ -28,9 +28,10 @@ export default function Manufacture(props) {
     productCode: 0,
     productPrice: 0,
     productCategory: "",
+    quantity: 0, // New field for quantity
   });
 
-  const handleChangeManufacturerForm = async (e) => {
+  const handleChangeManufacturerForm = (e) => {
     setManuForm({
       ...manuForm,
       [e.target.name]: e.target.value,
@@ -48,25 +49,30 @@ export default function Manufacture(props) {
       manuForm.productName !== "" &&
       manuForm.productCode !== 0 &&
       manuForm.productPrice !== 0 &&
-      manuForm.productCategory !== ""
+      manuForm.productCategory !== "" &&
+      manuForm.quantity !== 0
     ) {
       setfvalid(false);
-      await supplyChainContract.methods
-        .manufactureProduct(
-          manuForm.manufacturerName,
-          manuForm.manufacturerDetails,
-          manuForm.manufacturerLongitude.toString(),
-          manuForm.manufacturerLatitude,
-          manuForm.productName,
-          parseInt(manuForm.productCode),
-          parseInt(manuForm.productPrice),
-          manuForm.productCategory
-        )
-        .send({ from: roles.manufacturer, gas: 999999 })
-        // .then(console.log)
-        .on("transactionHash", function (hash) {
-          handleSetTxhash(hash);
-        });
+      
+      // Use a loop to add products based on the specified quantity
+      for (let i = 0; i < manuForm.quantity; i++) {
+        await supplyChainContract.methods
+          .manufactureProduct(
+            manuForm.manufacturerName,
+            manuForm.manufacturerDetails,
+            manuForm.manufacturerLongitude.toString(),
+            manuForm.manufacturerLatitude,
+            manuForm.productName,
+            parseInt(manuForm.productCode),
+            parseInt(manuForm.productPrice),
+            manuForm.productCategory
+          )
+          .send({ from: roles.manufacturer, gas: 999999 })
+          .on("transactionHash", function (hash) {
+            handleSetTxhash(hash);
+          });
+      }
+
       setManuForm({
         id: 0,
         manufacturerName: "",
@@ -77,6 +83,7 @@ export default function Manufacture(props) {
         productCode: 0,
         productPrice: 0,
         productCategory: "",
+        quantity: 0,
       });
     } else {
       setfvalid(true);
@@ -201,7 +208,7 @@ export default function Manufacture(props) {
                     style={{ width: "100%" }}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
                   <TextField
                     required
                     name="productCategory"
@@ -212,7 +219,17 @@ export default function Manufacture(props) {
                     style={{ width: "100%" }}
                   />
                 </Grid>
-                
+                <Grid item xs={6}>
+                  <TextField
+                    required
+                    name="quantity"
+                    variant="outlined"
+                    value={manuForm.quantity}
+                    onChange={handleChangeManufacturerForm}
+                    label="Quantity"
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
               </Grid>
               <br />
               <p>
