@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import NavManufacture from "../../components/NavManufacture";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -84,8 +84,8 @@ export default function AllManufacture(props) {
   };
 
   return (
-    <div classname={classes.pageWrap}>
-      <Navbar pageTitle={"Manufacturer"} navItems={navItem}>
+    <div className={classes.pageWrap}>
+      <NavManufacture pageTitle={"Manufacturer"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
@@ -97,7 +97,7 @@ export default function AllManufacture(props) {
             />
             <h1 className={classes.pageHeading}>Manufactured Products</h1>
             <h3 className={classes.tableCount}>
-              Total : {allManufacture.length}
+              Total: {allManufacture.length}
             </h3>
             <>
               <div>
@@ -106,7 +106,10 @@ export default function AllManufacture(props) {
                     <Table stickyHeader aria-label="sticky table">
                       <TableHead>
                         <TableRow>
-                          <TableCell className={classes.TableHead} align="left">
+                          <TableCell
+                            className={classes.TableHead}
+                            align="left"
+                          >
                             Universal ID
                           </TableCell>
                           <TableCell
@@ -152,7 +155,9 @@ export default function AllManufacture(props) {
                               page * rowsPerPage + rowsPerPage
                             )
                             .map((prod) => {
-                              const d = new Date(parseInt(prod[1][0] * 1000));
+                              const d = new Date(
+                                parseInt(prod[1][0] * 1000)
+                              );
                               return (
                                 <TableRow
                                   hover
@@ -182,7 +187,9 @@ export default function AllManufacture(props) {
                                     {prod[0][4]}
                                   </TableCell>
                                   <TableCell align="center">
-                                    {d.toDateString() + " " + d.toTimeString()}
+                                    {d.toDateString() +
+                                      " " +
+                                      d.toTimeString()}
                                   </TableCell>
                                   <TableCell
                                     className={classes.TableCell}
@@ -222,7 +229,7 @@ export default function AllManufacture(props) {
             </>
           </div>
         )}
-      </Navbar>
+      </NavManufacture>
     </div>
   );
 }

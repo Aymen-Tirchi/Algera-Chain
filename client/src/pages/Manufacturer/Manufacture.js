@@ -2,10 +2,10 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { useRole } from "../../context/RoleDataContext";
-import Navbar from "../../components/Navbar";
 import { useStyles } from "../../components/Styles";
 import Grid from "@material-ui/core/Grid";
 import Loader from "../../components/Loader";
+import NavManufacture from "../../components/NavManufacture";
 
 export default function Manufacture(props) {
   const supplyChainContract = props.supplyChainContract;
@@ -13,11 +13,6 @@ export default function Manufacture(props) {
   const { roles } = useRole();
   const [loading, setLoading] = React.useState(false);
   const [fvalid, setfvalid] = React.useState(false);
-  const navItem = [
-    ["Add Product", "/manufacturer/manufacture"],
-    ["Ship Product", "/manufacturer/ship"],
-    ["All Products", "/manufacturer/allManufacture"],
-  ];
   const [manuForm, setManuForm] = React.useState({
     id: 0,
     manufacturerName: "",
@@ -28,7 +23,7 @@ export default function Manufacture(props) {
     productCode: 0,
     productPrice: 0,
     productCategory: "",
-    quantity: 0, // New field for quantity
+    quantity: 0,
   });
 
   const handleChangeManufacturerForm = (e) => {
@@ -53,8 +48,7 @@ export default function Manufacture(props) {
       manuForm.quantity !== 0
     ) {
       setfvalid(false);
-      
-      // Use a loop to add products based on the specified quantity
+
       for (let i = 0; i < manuForm.quantity; i++) {
         await supplyChainContract.methods
           .manufactureProduct(
@@ -88,6 +82,7 @@ export default function Manufacture(props) {
     } else {
       setfvalid(true);
     }
+
     setLoading(false);
   };
 
@@ -114,7 +109,7 @@ export default function Manufacture(props) {
 
   return (
     <>
-      <Navbar pageTitle={"Manufacturer"} navItems={navItem}>
+      <NavManufacture pageTitle={"Manufacturer"}>
         {loading ? (
           <Loader />
         ) : (
@@ -251,7 +246,7 @@ export default function Manufacture(props) {
             </div>
           </>
         )}
-      </Navbar>
+      </NavManufacture>
     </>
   );
 }

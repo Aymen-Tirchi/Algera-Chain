@@ -265,5 +265,8 @@ export default function PersistentDrawerLeft({
         <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
       </main>
     </div>
+  
+    
+     
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import NavManufacture from "../../components/NavManufacture";
+
 import Button from "@material-ui/core/Button";
 import { useRole } from "../../context/RoleDataContext";
 import Table from "@material-ui/core/Table";
@@ -108,7 +109,7 @@ export default function ShipManufacture(props) {
 
   return (
     <div className={classes.pageWrap}>
-      <Navbar pageTitle={"Manufacturer"} navItems={navItem}>
+      <NavManufacture pageTitle={"Manufacturer"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
@@ -296,7 +297,7 @@ export default function ShipManufacture(props) {
         )} */}
           </>
         )}
-      </Navbar>
+      </NavManufacture>
     </div>
   );
 }

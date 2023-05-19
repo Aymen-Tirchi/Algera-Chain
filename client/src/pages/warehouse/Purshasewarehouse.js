@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import Navmanufacure from "../../components/Navbar";
 import Button from "@material-ui/core/Button";
 import { useRole } from "../../context/RoleDataContext";
 import Table from "@material-ui/core/Table";
@@ -103,7 +103,7 @@ export default function Purchasewarehouse(props) {
 
   return (
     <div classname={classes.pageWrap}>
-      <Navbar pageTitle={"warehouse"} navItems={navItem}>
+      <Navmanufacure pageTitle={"warehouse"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
@@ -282,7 +282,7 @@ export default function Purchasewarehouse(props) {
           ))) : <> </>} */}
           </>
         )}
-      </Navbar>
+      </Navmanufacure>
     </div>
   );
 }
