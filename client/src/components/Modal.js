@@ -101,12 +101,12 @@ export default function ProductModal({
 
                   <div className={classes.dRow}>
                     <div className={classes.dCol1}>
-                      Longitude of Manufature:{" "}
+                      Longitude of Manufacture:{" "}
                     </div>{" "}
                     <div className={classes.dCol2}>{prod[0][6]}</div>
                   </div>
                   <div className={classes.dRow}>
-                    <div className={classes.dCol1}>Latitude of Manufature:</div>{" "}
+                    <div className={classes.dCol1}>Latitude of Manufacture:</div>{" "}
                     <div className={classes.dCol2}>{prod[0][7]}</div>
                   </div>
 
@@ -224,7 +224,7 @@ export default function ProductModal({
                             )
                           }
                         >
-                          Recieve
+                          Receive
                         </Button>
                         <p>
                           <b style={{ color: "red" }}>

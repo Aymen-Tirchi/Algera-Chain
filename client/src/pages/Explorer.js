@@ -15,10 +15,11 @@ import { MapContainer } from "../components/map";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "../components/Styles";
 import Loader from "../components/Loader";
+import QRCode from "qrcode.react";
 
 const columns = [
   { id: "id", label: "Universal ID", minWidth: 170 },
-  { id: "mname", label: "Manfacturer", minWidth: 170 },
+  { id: "mname", label: "Manufacturer", minWidth: 170 },
   { id: "mdate", label: "Date", minWidth: 170 },
   { id: "pname", label: "Product Name", minWidth: 170 },
   { id: "price", label: "Price", minWidth: 170 },
@@ -161,13 +162,17 @@ export default function Explorer(props) {
                           Details of Manufacturer : {productData[0][5]}
                         </div>
                         <div className={classes.ExplorerdRow}>
-                          Longitude of Manufature : {productData[0][6]}
+                          Longitude of Manufacture : {productData[0][6]}
                         </div>
                         <div className={classes.ExplorerdRow}>
-                          Latitude of Manufature : {productData[0][7]}
+                          Latitude of Manufacture : {productData[0][7]}
                         </div>
                         <div className={classes.ExplorerdRow}>
                           Manufactured date : {productData[1][0]}
+                        </div>
+
+                        <div>
+                          <QRCode value={`http://localhost:3000/Explorer/${productData[0][0]}`} />
                         </div>
 
                         <Button
@@ -213,7 +218,7 @@ export default function Explorer(props) {
                             align="center"
                             className={classes.TableHead}
                           >
-                            Recipt
+                            Receipt
                           </TableCell>
                         </TableRow>
                       </TableHead>
@@ -270,7 +275,6 @@ export default function Explorer(props) {
                                   align="center"
                                   onClick={() => handleClick(row)}
                                 >
-                                  {/* {row[0][2]} */}
                                   {row[0][2].length > 15
                                     ? row[0][2].substring(0, 15) + "..."
                                     : row[0][2]}
@@ -306,37 +310,40 @@ export default function Explorer(props) {
                                     type="submit"
                                     variant="contained"
                                     color="primary"
-                                    onClick={() => fetchTxRecipt(row[2][5])}
+                                    onClick={() =>
+                                      fetchTxRecipt(row[2][5])
+                                    }
                                   >
-                                    Recipt
+                                    Receipt
                                   </Button>
                                 </TableCell>
                               </TableRow>
                             );
                           })
                         ) : (
-                          <></>
+                          <TableRow>
+                            <TableCell
+                              colSpan={columns.length + 3}
+                              align="center"
+                            >
+                              No History Available
+                            </TableCell>
+                          </TableRow>
                         )}
                       </TableBody>
                     </Table>
                   </TableContainer>
                 </Paper>
               </>
-
-              
             ) : (
-              <>{Text ? 
-                <p id="notfound" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                  
-                <img src="NotFound.svg" alt="Product Not Found" style={{ width: '470px', height: '400px' }}  /> 
-                <span style={{ marginTop: '5px', fontWeight: 'semi-bold' }}>Product Not Found</span>  
-               </p> : <></>}</>
+              Text && (
+                <p style={{ textAlign: "center", color: "red" }}>
+                  Invalid Universal ID or SKU
+                </p>
+              )
             )}
           </>
         )}
-
-
-
       </Navbar>
     </>
   );
