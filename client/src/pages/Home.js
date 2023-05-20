@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { useStyles } from "../components/Styles";
 import Grid from "@material-ui/core/Grid";
+
 import {
   Card,
   CardContent,
@@ -104,28 +105,56 @@ export default function Home() {
   const FlippableCard = styled(Card)`
     width: 400px;
     height: 400px;
-    border: 1px solid #ccc;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 1.8s;
     transform-style: preserve-3d;
+    background-color: #343a3f;
 
     &:hover {
       transform: rotateY(180deg);
+      transition: transform 1, 5s;
     }
 
     &.flipped {
       transform: rotateY(180deg);
+      transition: transform 1, 5s;
     }
   `;
 
   const FrontCardContent = styled(CardContent)`
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+
+    h2 {
+      color: #dde4dd;
+      margin-top: 30px;
+    }
+
+    p {
+      color: #dde4dd;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
   `;
 
   const BackCardContent = styled(CardContent)`
     transform: rotateY(180deg);
+    h2 {
+      color: #dde4dd;
+    }
+
+    p {
+      color: #dde4dd;
+    }
   `;
+
   const CardBox = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -180,15 +209,24 @@ export default function Home() {
           {cards.slice(currentIndex, currentIndex + 2).map((card, index) => (
             <FlippableCard
               key={index}
-              sx={{ mx: 2 }}
+              sx={{ mx: 4 }}
               style={{
                 transform: `rotateY(${(index + currentIndex) * 180}deg)`,
+                opacity: 1,
+                zIndex: index === 1 ? -1 : 0,
               }}
             >
-              <FrontCardContent>
-                <h2>{card.title}</h2>
-                <p>{card.content}</p>
-              </FrontCardContent>
+              {index === 0 ? (
+                <FrontCardContent>
+                  <h2>{card.title}</h2>
+                  <p>{card.content}</p>
+                </FrontCardContent>
+              ) : (
+                <BackCardContent>
+                  <h2>{card.title}</h2>
+                  <p>{card.content}</p>
+                </BackCardContent>
+              )}
             </FlippableCard>
           ))}
         </Box>
@@ -230,7 +268,7 @@ export default function Home() {
               <Grid item xs={12} md={7}>
                 <Typography
                   variant="h3"
-                  fontWeight={700}
+                  fontWeight={900}
                   className={classes.title}
                 >
                   Blockchain in Supply Chain
@@ -251,7 +289,11 @@ export default function Home() {
               </Grid>
             </Grid>
           </Box>
+          <Typography variant="h2" fontWeight={700} className={classes.title2}>
+            How to use it!
+          </Typography>
           <CardBox />
+
           <Box sx={{ flexGrow: 1, minHeight: "400px" }}>
             <Grid container className={classes.sectionGridContainer}>
               {sectionItems.map((item) => (
@@ -269,6 +311,7 @@ export default function Home() {
               ))}
             </Grid>
           </Box>
+
           <Box
             sx={{
               flexGrow: 1,
@@ -314,7 +357,7 @@ export default function Home() {
                 </Grid>
               </Grid>
             </Box>
-            <Grid container spacing={2}>
+            <Grid container spacing={10}>
               {reviews.map((review) => (
                 <Grid item sm={12} md={4} key={review.id}>
                   <Card className={classes.testimonialCard}>

@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -11,11 +11,11 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import ClearAllIcon from '@mui/icons-material/ClearAll';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ClearAllIcon from "@mui/icons-material/ClearAll";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -139,63 +139,62 @@ export default function Navbar({ children }) {
             {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-        
-        
-
 
         <List>
-        <Link to="/" style={{ textDecoration: "none", color: "#DDE4DD" }}>
-           <ListItem disablePadding>
-      <ListItemIcon>
-        {/* Add the icon for the Manufacture */}
-      </ListItemIcon>
-      <ListItemText
-        primary="Manufacture"
-        style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
-      />
-    </ListItem>
-    </Link>
-    <Link to="/manufacturer/manufacture" style={{ textDecoration: "none", color: "#DDE4DD" }}>
-           <ListItem disablePadding>
-      <ListItemIcon>
-        {  <AddCircleOutlineIcon style={{ color: "white" }}/>}
-      </ListItemIcon>
-      <ListItemText
-        primary="Add product"
-        style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
-      />
-    </ListItem>
-    </Link>
-    <Link to="/manufacturer/ship" style={{ textDecoration: "none", color: "#DDE4DD" }}>
-           <ListItem disablePadding>
-      <ListItemIcon>
-        {<LocalShippingIcon sx={{ color: "#FFFFFF" }} />}
-      </ListItemIcon>
-      <ListItemText
-        primary="Ship Product"
-        style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
-      />
-    </ListItem>
-    </Link>
-    <Link to="/manufacturer/allManufacture" style={{ textDecoration: "none", color: "#DDE4DD" }}>
-           <ListItem disablePadding>
-      <ListItemIcon>
-             <ClearAllIcon style={{ color: "white" }} /> 
-      </ListItemIcon>
-      <ListItemText
-        primary="All Products"
-        style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
-      />
-    </ListItem>
-    </Link>
-    </List>
-        
-
-
-
-
-
-        
+          <Link to="/" style={{ textDecoration: "none", color: "#DDE4DD" }}>
+            <ListItem disablePadding>
+              <ListItemIcon>
+                {/* Add the icon for the Manufacture */}
+              </ListItemIcon>
+              <ListItemText
+                primary="Manufacture"
+                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+              />
+            </ListItem>
+          </Link>
+          <Link
+            to="/manufacturer/manufacture"
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                {<AddCircleOutlineIcon style={{ color: "white" }} />}
+              </ListItemIcon>
+              <ListItemText
+                primary="Add product"
+                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+              />
+            </ListItem>
+          </Link>
+          <Link
+            to="/manufacturer/ship"
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                {<LocalShippingIcon sx={{ color: "#FFFFFF" }} />}
+              </ListItemIcon>
+              <ListItemText
+                primary="Ship Product"
+                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+              />
+            </ListItem>
+          </Link>
+          <Link
+            to="/manufacturer/allManufacture"
+            style={{ textDecoration: "none", color: "#DDE4DD" }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <ClearAllIcon style={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText
+                primary="All Products"
+                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+              />
+            </ListItem>
+          </Link>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.drawerHeader} />

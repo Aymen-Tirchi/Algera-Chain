@@ -270,11 +270,19 @@ export const useStyles = makeStyles((theme) => ({
   subtitle: {
     //opacity: '0.4',
     paddingBottom: "30px",
+    
     color: "#4E4D4D",
   },
   title: {
     paddingBottom: "15px",
     fontWeight: "bold",
+    
+  },
+  title2: {
+    padding: "0em 0em 0em 0em",
+
+    fontWeight: "bolder",
+    
   },
   gridContainer: {
     display: "flex",
@@ -302,32 +310,35 @@ export const useStyles = makeStyles((theme) => ({
     margin: "10px !important",
   },
   
-    testimonialCard: {
-      boxSizing: "border-box",
-      width: "350px",
-      height: "280px",
-      backgroundColor: "#F1EDED",
-      border: "1px solid white",
-      boxShadow: "12px 15px 40px #DADADA",
-      backdropFilter: "blur(6px)",
-      borderRadius: "15px",
-      textAlign: "center",
-      cursor: "pointer",
-      transition: "all 0.7s",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      userSelect: "none",
-      fontWeight: "bolder",
-      color: "black",
-      "&:hover": {
-        border: "2px solid black",
-        transform: "scale(1.05)"
-      },
-      "&:active": {
-        transform: "scale(0.95) rotateZ(1.7deg)"
-      },
+  testimonialCard: {
+    boxSizing: "border-box",
+    width: "350px",
+    height: "280px",
+    backgroundColor: "#F1EDED",
+    border: "1px solid white",
+    boxShadow: "12px 15px 40px #DADADA",
+    backdropFilter: "blur(6px)",
+    borderRadius: "15px",
+    textAlign: "center",
+    cursor: "pointer",
+    transition: "all 0.7s",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    userSelect: "none",
+    fontWeight: "bolder",
+    color: "black",
+    margin: "10px", // Add margin to create space between cards
+  
+    "&:hover": {
+      border: "2px solid black",
+      transform: "scale(1.05)"
     },
+    "&:active": {
+      transform: "scale(0.95) rotateZ(1.7deg)"
+    },
+  },
+  
     
   
   
