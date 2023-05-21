@@ -98,7 +98,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: "#c9d3cf",
+    backgroundColor: "#fff",
     padding: 15,
     outline: "none",
     width: "min(90%, 650px)",
@@ -375,6 +375,10 @@ export const useStyles = makeStyles((theme) => ({
     width: "90%",
     color: "black"
   },
+  Qr_code: {
+    justifyContent: "center",
+    display: "flex",
+  }
   
   
 }));

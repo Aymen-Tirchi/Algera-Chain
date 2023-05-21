@@ -20,7 +20,7 @@ import QRCode from "qrcode.react";
 const columns = [
   { id: "id", label: "Universal ID", minWidth: 170 },
   { id: "mname", label: "Manufacturer", minWidth: 170 },
-  { id: "mdate", label: "Date", minWidth: 170 },
+  { id: "mdate", label: "Manufactured Date", minWidth: 170 },
   { id: "pname", label: "Product Name", minWidth: 170 },
   { id: "price", label: "Price", minWidth: 170 },
   { id: "owner", label: "Owner", minWidth: 170 },
@@ -171,8 +171,8 @@ export default function Explorer(props) {
                           Manufactured date : {productData[1][0]}
                         </div>
 
-                        <div>
-                          <QRCode value={`http://localhost:3000/Explorer/${productData[0][0]}`} />
+                        <div className={classes.ExplorerdRow}>
+                        Product QR Code : <QRCode value={`http://localhost:3000/Explorer/${productData[0][0]}`} />
                         </div>
 
                         <Button
