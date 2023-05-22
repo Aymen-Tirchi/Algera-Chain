@@ -1,5 +1,5 @@
 import React from "react";
-import Navmanufacure from "../../components/Navbar";
+import NavWarehouse from "../../components/NavWarehouse";
 import Button from "@material-ui/core/Button";
 import { useRole } from "../../context/RoleDataContext";
 import Table from "@material-ui/core/Table";
@@ -22,11 +22,11 @@ export default function Purchasewarehouse(props) {
   const [count, setCount] = React.useState(0);
   const [allProducts, setAllProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
-  const navItem = [
-    ["Buy Product", "/warehouse/allProducts"],
-    ["Receive Product", "/warehouse/receive"],
-    ["Ship Products", "/warehouse/ship"],
-  ];
+  const [navItem, setNavItem] = React.useState([
+    { label: "Buy Product", link: "/warehouse/allProducts" },
+    { label: "Receive Product", link: "/warehouse/receive" },
+    { label: "Ship Products", link: "/warehouse/ship" },
+  ]);
   React.useEffect(() => {
     (async () => {
       setLoading(true);
@@ -103,7 +103,7 @@ export default function Purchasewarehouse(props) {
 
   return (
     <div classname={classes.pageWrap}>
-      <Navmanufacure pageTitle={"warehouse"} navItems={navItem}>
+      <NavWarehouse pageTitle={"warehouse"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
@@ -282,7 +282,7 @@ export default function Purchasewarehouse(props) {
           ))) : <> </>} */}
           </>
         )}
-      </Navmanufacure>
+      </NavWarehouse>
     </div>
   );
 }

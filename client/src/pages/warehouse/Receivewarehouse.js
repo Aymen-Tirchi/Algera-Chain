@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
+import NavWarehouse from "../../components/NavWarehouse";
 import Button from "@material-ui/core/Button";
 import ProductModal from "../../components/Modal";
 import { useRole } from "../../context/RoleDataContext";
@@ -110,7 +110,7 @@ export default function Receivewarehouse(props) {
 
   return (
     <div classname={classes.pageWrap}>
-      <Navbar pageTitle={"warehouse"} navItems={navItem}>
+      <NavWarehouse pageTitle={"warehouse"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
@@ -265,7 +265,7 @@ export default function Receivewarehouse(props) {
             </div>
           </>
         )}
-      </Navbar>
+      </NavWarehouse>
     </div>
   );
 }
