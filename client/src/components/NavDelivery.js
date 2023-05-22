@@ -11,14 +11,13 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import ClearAllIcon from "@mui/icons-material/ClearAll";
+
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import HomeIcon from "@mui/icons-material/Home";
 import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
-
+import MarkunreadMailboxIcon from '@mui/icons-material/MarkunreadMailbox';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -150,7 +149,7 @@ export default function Navbar({ children }) {
                 {/* Add the icon for the Manufacture */}
               </ListItemIcon>
               <ListItemText
-                primary="Manufacture"
+                primary="Delivery Hub"
                 style={{ color: "#d8bc94", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
@@ -175,21 +174,21 @@ export default function Navbar({ children }) {
           </Link>
           
           <Link
-            to="/manufacturer/manufacture"
+            to="/DeliveryHub/receive"
             style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
             <ListItem disablePadding>
               <ListItemIcon>
-                {<AddCircleOutlineIcon style={{ color: "white" }} />}
+              {<MarkunreadMailboxIcon style={{ color: "white" }} />}
               </ListItemIcon>
               <ListItemText
-                primary="Add product"
+                primary="Receive Product"
                 style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
           </Link>
           <Link
-            to="/manufacturer/ship"
+            to="/DeliveryHub/ship"
             style={{ textDecoration: "none", color: "#DDE4DD" }}
           >
             <ListItem disablePadding>
@@ -202,20 +201,7 @@ export default function Navbar({ children }) {
               />
             </ListItem>
           </Link>
-          <Link
-            to="/manufacturer/allManufacture"
-            style={{ textDecoration: "none", color: "#DDE4DD" }}
-          >
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <ClearAllIcon style={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="All Products"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
-              />
-            </ListItem>
-          </Link>
+         
         </List>
         </Drawer>
 <main

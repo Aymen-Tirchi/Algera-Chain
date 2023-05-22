@@ -223,11 +223,15 @@ export default function Navbar({ children }) {
             </ListItem>
           </Link>
         </List>
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.drawerHeader} />
-        {children}
-      </main>
-    </div>
-  );
+        </Drawer>
+<main
+  className={clsx(classes.content, {
+    [classes.contentShift]: open,
+  })}
+>
+  <div className={classes.drawerHeader} />
+  {children}
+</main>
+</div>
+);
 }

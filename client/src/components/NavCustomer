@@ -211,7 +211,7 @@ export default function Navbar({ children }) {
                 <ClearAllIcon style={{ color: "white" }} />
               </ListItemIcon>
               <ListItemText
-                primary="All Products"
+                primary="Your Products"
                 style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>

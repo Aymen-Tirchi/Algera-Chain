@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import NavDelivery from "../../components/NavDelivery";
 import Button from "@material-ui/core/Button";
 import { useRole } from "../../context/RoleDataContext";
 import Table from "@material-ui/core/Table";
@@ -107,7 +107,7 @@ export default function ShipDeliveryHub(props) {
   return (
     <>
       <div classname={classes.pageWrap}>
-        <Navbar pageTitle={"Delivery Hub"} navItems={navItem}>
+        <NavDelivery pageTitle={"Delivery Hub"} navItems={navItem}>
           {loading ? (
             <Loader />
           ) : (
@@ -280,7 +280,7 @@ export default function ShipDeliveryHub(props) {
               </div>
             </>
           )}
-        </Navbar>
+        </NavDelivery>
       </div>
     </>
   );
