@@ -14,8 +14,10 @@ import Typography from "@material-ui/core/Typography";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import HomeIcon from "@mui/icons-material/Home";
+import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
 
 const drawerWidth = 240;
 
@@ -141,17 +143,37 @@ export default function Navbar({ children }) {
         </div>
 
         <List>
-          <Link to="/" style={{ textDecoration: "none", color: "#DDE4DD" }}>
+          
             <ListItem disablePadding>
               <ListItemIcon>
+              <MapsHomeWorkIcon sx={{ fontSize: 35, color: '#d8bc94' }} />
                 {/* Add the icon for the Manufacture */}
               </ListItemIcon>
               <ListItemText
                 primary="Manufacture"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+                style={{ color: "#d8bc94", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
+            <Link to="/" style={{ textDecoration: "none", color: "#DDE4DD" }}>
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <HomeIcon sx={{ fontSize: 26, color: '#DDE4DD' }} />
+              </ListItemIcon>
+              <ListItemText>Home</ListItemText>
+            </ListItem>
           </Link>
+          <Link
+            to="/Explorer"
+            style={{ textDecoration: "none", color: "white"  }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <ScreenSearchDesktopIcon sx={{ fontSize: 26, color: "white"  }} />
+              </ListItemIcon>
+              <ListItemText>Search</ListItemText>
+            </ListItem>
+          </Link>
+          
           <Link
             to="/manufacturer/manufacture"
             style={{ textDecoration: "none", color: "#DDE4DD" }}

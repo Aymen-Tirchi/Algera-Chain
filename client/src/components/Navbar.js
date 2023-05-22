@@ -27,6 +27,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 const drawerWidth = 240;
 
@@ -192,7 +193,17 @@ export default function PersistentDrawerLeft({
               </ListItemIcon>
               <ListItemText>Roles Addresses</ListItemText>
             </ListItem>
-          </Link>
+          </Link> 
+          <ListItem disablePadding>
+              <ListItemIcon>
+              <KeyboardDoubleArrowDownIcon sx={{ fontSize: 35, color: '#d8bc94' }}  />
+                {/* Add the icon for the Manufacture */}
+              </ListItemIcon>
+              <ListItemText
+                primary="Visit As"
+                style={{ color: "#d8bc94", fontSize: 16, fontWeight: "bolder" }}
+              />
+            </ListItem>
           <Link
             to="/manufacturer/manufacture"
             style={{ textDecoration: "none", color: "#DDE4DD" }}

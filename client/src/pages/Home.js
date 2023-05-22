@@ -64,7 +64,7 @@ export default function Home() {
       name: "BOUKETHIR Youcef",
       statement:
         "As a front-end developer, I am passionate about creating user-friendly and responsive interfaces that provide a great experience for our users. I enjoy experimenting with new technologies and frameworks to continuously improve our products.",
-      image_url: "team.png",
+      image_url: "youcef.jpg",
     },
   ];
 
@@ -103,23 +103,33 @@ export default function Home() {
     },
   ];
   const FlippableCard = styled(Card)`
-    width: 400px;
-    height: 400px;
-    border-radius: 8px;
+    width: 380px;
+    height: 330px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: #E4CBCB;
     transition: transform 1.8s;
     transform-style: preserve-3d;
-    background-color: #343a3f;
+    background-color: #E4CBCB ;
 
     &:hover {
       transform: rotateY(180deg);
-      transition: transform 1, 5s;
+      transition: transform 1, 2s;
     }
 
     &.flipped {
       transform: rotateY(180deg);
-      transition: transform 1, 5s;
+      transition: transform 1, 4s;
+    }
+    h2 {
+      color: #000706;
+      margin-top: 30px;
+    }
+  
+    p {
+      color: #000000;
+      margin-top: 50px;
+      margin-bottom: 25px;
     }
   `;
 
@@ -132,26 +142,18 @@ export default function Home() {
     text-align: center;
     height: 100%;
 
-    h2 {
-      color: #dde4dd;
-      margin-top: 30px;
-    }
-
-    p {
-      color: #dde4dd;
-      margin-top: 60px;
-      margin-bottom: 20px;
-    }
+ 
   `;
 
   const BackCardContent = styled(CardContent)`
     transform: rotateY(180deg);
-    h2 {
-      color: #dde4dd;
+    title {
+      color: #D5DDD5;
     }
+   
 
-    p {
-      color: #dde4dd;
+    content {
+      color: #00372A;
     }
   `;
 
@@ -159,29 +161,31 @@ export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const cards = [
-      {
-        title: "Step 1",
-        content: "The Manufacturer adds a product to the system",
+      { 
+        title: " STEP 1",
+       
+        content: "First Set up User Roles  by assigning roles to each user of the app: Manufacturer, Warehouse Seller, Delivery Hub, and Customer. ",
       },
       {
-        title: "Step 2",
-        content: "The warehouse sellers buy the product from the manufacturer",
+        title: "STEP 2",
+        
+        content: "First Set up User Roles; The Manufacturer logs into the app and navigates to the Add Product page .After adding the product, it becomes visible in their product list",
       },
       {
-        title: "Step 3",
-        content: "The warehouse sellers buy the product from the manufacturer",
+        title: " STEP 3",
+        content: "The warehouse sellers buy the product from the manufacturer , select the desired product(s) and initiate the purchase process.",
       },
       {
-        title: "Step 4",
-        content: "The warehouse sellers buy the product from the manufacturer",
+        title: "STEP 4",
+        content: "Manufacturer Ships the Product to the Warehouse ,Once the Warehouse Seller has purchased the product, the Manufacturer is notified. The Manufacturer prepares the product for shipment and The product is dispatched to the Warehouse.",
       },
       {
-        title: "Step 5",
-        content: "The warehouse sellers buy the product from the manufacturer",
+        title: "STEP 5",
+        content: " Customer Purchases a Product,The Customer logs into the app and browses the available products.They select the desired product(s) and proceed to the checkout page.",
       },
       {
-        title: "Step 6",
-        content: "The warehouse sellers buy the product from the manufacturer",
+        title: "STEP 6",
+        content: "Upon receiving the order details, the Delivery Hub prepares the ship .The product is sent to the designated delivery hub.The Customer receives the product, verifies its condition, and acknowledges the delivery.",
       },
     ];
 
@@ -289,8 +293,8 @@ export default function Home() {
               </Grid>
             </Grid>
           </Box>
-          <Typography variant="h2" fontWeight={700} className={classes.title2}>
-            How to use it!
+          <Typography variant="h2" fontWeight={400} className={classes.title2}>
+            .
           </Typography>
           <CardBox />
 
