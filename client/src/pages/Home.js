@@ -280,7 +280,7 @@ export default function Home() {
                 <Typography variant="h6" className={classes.subtitle}>
                   We use blockchain technology to provide innovative solutions
                   for real-world problems. With Algeria Chain, you can trust
-                  that your tracking needs are being handled with care. Now,
+                  that your tracking needs are being handled with care. Now
                   Tracking your product is just a click away.
                 </Typography>
               </Grid>
@@ -288,7 +288,7 @@ export default function Home() {
                 <img
                   src="trackih.png"
                   alt="Img"
-                  style={{ width: "510px", height: "auto" }} // add inline styles for the smaller image size
+                  style={{ width: "525px", height: "auto" }} // add inline styles for the smaller image size
                 />
               </Grid>
             </Grid>
@@ -327,7 +327,7 @@ export default function Home() {
           >
             <Box className={classes.aboutUsContainer}>
               <Grid container spacing={6} className={classes.gridContainer}>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={6}>
                   <img
                     src="team.png"
                     alt="My Team"

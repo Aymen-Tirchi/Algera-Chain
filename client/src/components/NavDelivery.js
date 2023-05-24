@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar({ children }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -153,10 +153,10 @@ export default function Navbar({ children }) {
                 style={{ color: "#d8bc94", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
-            <Link to="/" style={{ textDecoration: "none", color: "#DDE4DD" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <ListItem disablePadding>
               <ListItemIcon>
-                <HomeIcon sx={{ fontSize: 26, color: '#DDE4DD' }} />
+                <HomeIcon sx={{ fontSize: 26, color: 'white' }} />
               </ListItemIcon>
               <ListItemText>Home</ListItemText>
             </ListItem>
@@ -183,7 +183,7 @@ export default function Navbar({ children }) {
               </ListItemIcon>
               <ListItemText
                 primary="Receive Product"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+                style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
           </Link>
@@ -197,7 +197,7 @@ export default function Navbar({ children }) {
               </ListItemIcon>
               <ListItemText
                 primary="Ship Product"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+                style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
           </Link>

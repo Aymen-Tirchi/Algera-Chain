@@ -336,11 +336,12 @@ export default function Explorer(props) {
                 </Paper>
               </>
             ) : (
-              Text && (
-                <p style={{ textAlign: "center", color: "red" }}>
-                  Invalid Universal ID or SKU
-                </p>
-              )
+              <>{Text ? 
+                <p id="notfound" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+
+                <img src="NotFound.svg" alt="Product Not Found" style={{ width: '500px', height: '430px' }}  /> 
+                <span style={{ marginTop: '1px', fontWeight: 'semi-bold' }}>Product Not Found</span>  
+               </p> : <></>}</>
             )}
           </>
         )}

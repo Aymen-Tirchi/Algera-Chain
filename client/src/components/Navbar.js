@@ -172,17 +172,7 @@ export default function PersistentDrawerLeft({
               <ListItemText>Home</ListItemText>
             </ListItem>
           </Link>
-          <Link
-            to="/Explorer"
-            style={{ textDecoration: "none", color: "#DDE4DD" }}
-          >
-            <ListItem disablePadding>
-              <ListItemIcon>
-                <ScreenSearchDesktopIcon sx={{ fontSize: 35, color: '#DDE4DD' }} />
-              </ListItemIcon>
-              <ListItemText>Search</ListItemText>
-            </ListItem>
-          </Link>
+          
           <Link
             to="/roleAdmin"
             style={{ textDecoration: "none", color: "#fff" }}
@@ -200,7 +190,7 @@ export default function PersistentDrawerLeft({
                 {/* Add the icon for the Manufacture */}
               </ListItemIcon>
               <ListItemText
-                primary="Visit As"
+                primary="Sign in as"
                 style={{ color: "#d8bc94", fontSize: 16, fontWeight: "bolder" }}
               />
             </ListItem>
