@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import { ListItemIcon } from "@material-ui/core";
 
 import HomeIcon from "@mui/icons-material/Home";
+// eslint-disable-next-line no-unused-vars
 import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
 
 import WarehouseIcon from "@mui/icons-material/Warehouse";

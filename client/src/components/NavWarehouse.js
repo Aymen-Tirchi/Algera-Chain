@@ -19,6 +19,7 @@ import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import HomeIcon from "@mui/icons-material/Home";
 import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop";
 import MarkunreadMailboxIcon from '@mui/icons-material/MarkunreadMailbox';
+// eslint-disable-next-line no-unused-vars
 const navItem = [
     { label: "Buy Product", link: "/warehouse/allProducts" },
     { label: "Receive Product", link: "/warehouse/receive" },
