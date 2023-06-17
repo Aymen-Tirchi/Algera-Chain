@@ -169,7 +169,7 @@ export default function Home() {
       {
         title: "STEP 2",
         
-        content: "First Set up User Roles; The Manufacturer logs into the app and navigates to the Add Product page .After adding the product, it becomes visible in their product list",
+        content: "The Manufacturer logs into the app and navigates to the Add Product page .After adding the product, it becomes visible in their product list",
       },
       {
         title: " STEP 3",
@@ -294,7 +294,7 @@ export default function Home() {
             </Grid>
           </Box>
           <Typography variant="h2" fontWeight={400} className={classes.title2}>
-            .
+            
           </Typography>
           <CardBox />
 
