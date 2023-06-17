@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar({ children }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -184,7 +184,7 @@ export default function Navbar({ children }) {
               </ListItemIcon>
               <ListItemText
                 primary="Add product"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+                style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
           </Link>
@@ -198,7 +198,7 @@ export default function Navbar({ children }) {
               </ListItemIcon>
               <ListItemText
                 primary="Ship Product"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+                style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
           </Link>
@@ -212,7 +212,7 @@ export default function Navbar({ children }) {
               </ListItemIcon>
               <ListItemText
                 primary="All Products"
-                style={{ color: "#DDE4DD", fontSize: 16, fontWeight: "bold" }}
+                style={{ color: "white", fontSize: 16, fontWeight: "bold" }}
               />
             </ListItem>
           </Link>
