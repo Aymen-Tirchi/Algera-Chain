@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
+import NavCustomer  from "../../components/NavCustomer";
 import Button from "@material-ui/core/Button";
 import ProductModal from "../../components/Modal";
 import { useRole } from "../../context/RoleDataContext";
@@ -108,7 +108,7 @@ export default function ReceiveCustomer(props) {
 
   return (
     <div classname={classes.pageWrap}>
-      <Navbar pageTitle={"Customer"} navItems={navItem}>
+      <NavCustomer pageTitle={"Customer"} navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
@@ -263,7 +263,7 @@ export default function ReceiveCustomer(props) {
             </div>
           </>
         )}
-      </Navbar>
+      </NavCustomer>
     </div>
   );
 }

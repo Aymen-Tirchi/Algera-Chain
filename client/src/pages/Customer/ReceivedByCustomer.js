@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import NavCustomer from "../../components/NavCustomer";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -85,7 +85,7 @@ export default function ReceivedByCustomer(props) {
   return (
     <>
       <div classname={classes.pageWrap}>
-        <Navbar pageTitle={"Customer"} navItems={navItem}>
+        <NavCustomer pageTitle={"Customer"} navItems={navItem}>
           {loading ? (
             <Loader />
           ) : (
@@ -227,7 +227,7 @@ export default function ReceivedByCustomer(props) {
               </>
             </>
           )}
-        </Navbar>
+        </NavCustomer>
       </div>
     </>
   );
