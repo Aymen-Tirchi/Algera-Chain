@@ -173,6 +173,17 @@ export default function PersistentDrawerLeft({
               <ListItemText>Home</ListItemText>
             </ListItem>
           </Link>
+          <Link
+            to="/Explorer"
+            style={{ textDecoration: "none", color: "white"  }}
+          >
+            <ListItem disablePadding>
+              <ListItemIcon>
+                <ScreenSearchDesktopIcon sx={{ fontSize: 26, color: "white"  }} />
+              </ListItemIcon>
+              <ListItemText>Search</ListItemText>
+            </ListItem>
+          </Link>
           
           <Link
             to="/roleAdmin"
